@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MorphSVGPlugin } from '../util-functions/MorphSVGPlugin';
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(MorphSVGPlugin);
+// component
 const PageNavigation = (props) => {
 	//id names
 	const section1 = `${props.section1}`;
