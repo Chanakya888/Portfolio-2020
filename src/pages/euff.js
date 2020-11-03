@@ -10,7 +10,6 @@ const Euff = () => {
 	// Ref for parent div and scrolling div
 	const app = useRef();
 	const scrollContainer = useRef();
-	const pageNavigation = useRef();
 	// Configs
 	const data = {
 		ease: 0.1,

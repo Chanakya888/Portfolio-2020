@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { Link } from 'gatsby';
 import gsap from 'gsap';
+import { SplitText } from '../util-functions/SplitText';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { MorphSVGPlugin } from '../util-functions/MorphSVGPlugin';
 gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(MorphSVGPlugin);
 // component
 const PageNavigation = (props) => {
 	//id names
@@ -29,23 +28,22 @@ const PageNavigation = (props) => {
 
 	const sectionEnter = (section) => {
 		document.getElementById(`${section}-circle`).classList.add('circle-full-opacity');
-		// gsap.to(`#${section}-text`, { y: 0, ease: 'Power4.easeOut' });
 	};
 	const sectionLeave = (section) => {
 		document.getElementById(`${section}-circle`).classList.remove('circle-full-opacity');
-		// gsap.to(`#${section}-text`, { y: distanceThatTextWillGoBelow, ease: 'Power4.easeIn' });
 	};
 
 	const showTheText = (section) => {
-		gsap.to(`#${section}-text`, { y: 0, ease: 'Power4.easeOut' });
+		gsap.to(`.${section}-text-chars`, 0.2, { y: 0, stagger: 0.02, ease: 'Power4.easeOut' });
 	};
 
 	const hideTheText = (section) => {
-		gsap.to(`#${section}-text`, { y: distanceThatTextWillGoBelow, ease: 'Power4.easeIn' });
+		gsap.to(`.${section}-text-chars`, 0.2, { y: 60, stagger: 0.02, ease: 'Power4.easeIn' });
 	};
 
+	//scroll triggers
 	useEffect(() => {
-		gsap.set('.page-navigation-text', { y: distanceThatTextWillGoBelow });
+		// gsap.set('.page-navigation-text', { y: distanceThatTextWillGoBelow });
 		ScrollTrigger.create({
 			trigger: `#${section1}`,
 			start: 'top 60%',
@@ -82,7 +80,17 @@ const PageNavigation = (props) => {
 			onEnterBack: () => sectionEnter(section4),
 			onLeaveBack: () => sectionLeave(section4)
 		});
-	});
+	}, []);
+
+	//split chars
+	useEffect(() => {
+		new SplitText(`#${section1}-text`, { type: 'chars', charsClass: `${section1}-text-chars` });
+		new SplitText(`#${section2}-text`, { type: 'chars', charsClass: `${section2}-text-chars` });
+		new SplitText(`#${section3}-text`, { type: 'chars', charsClass: `${section3}-text-chars` });
+		new SplitText(`#${section4}-text`, { type: 'chars', charsClass: `${section4}-text-chars` });
+		new SplitText(`#${section5}-text`, { type: 'chars', charsClass: `${section5}-text-chars` });
+		gsap.set([ `.${section1}-text-chars`, `.${section2}-text-chars`, `.${section3}-text-chars`, `.${section4}-text-chars`, `.${section5}-text-chars` ], { y: 60 });
+	}, []);
 
 	return (
 		<div id="pageNavigation" className="page-navigation">
