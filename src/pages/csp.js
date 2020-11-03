@@ -1,17 +1,12 @@
 import React, { useRef, useEffect } from 'react';
 import useWindowSize from '../util-functions/useWindowSize';
-import '../styles/reset.css';
-import '../styles/global.css';
-import '../styles/App.css';
-import IndexSection from '../home-page-sections/IndexSection';
+import CspIndex from '../csp-page-sections/CspIndex';
 import PageNavigation from '../components/PageNavigation';
-
-export default function Home() {
+const CSP = () => {
 	//Hook to grab window size
 	const size = useWindowSize();
 
 	// Ref for parent div and scrolling div
-
 	const app = useRef();
 	const scrollContainer = useRef();
 
@@ -23,10 +18,10 @@ export default function Home() {
 		rounded: 0
 	};
 
-	// Running scrollrender once page is loaded.
+	// Run scrollrender once page is loaded.
 	useEffect(() => {
 		requestAnimationFrame(() => skewScrolling());
-	});
+	}, []);
 
 	//set the height of the body.
 	useEffect(
@@ -52,29 +47,30 @@ export default function Home() {
 			data.rounded = Math.round(data.previous * 100) / 100;
 
 			// Difference between
-			// const difference = data.current - data.rounded;
-			// const acceleration = difference / size.width;
-			// const velocity = +acceleration;
-			// const skew = velocity * 7.5
+			const difference = data.current - data.rounded;
+			const acceleration = difference / size.width;
+			const velocity = +acceleration;
+			const skew = velocity * 7.5;
 
 			//Assign skew and smooth scrolling to the scroll container
 			scrollContainer.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
 
-			//loop vai raf
+			//loop vai rafd
 			requestAnimationFrame(() => skewScrolling());
 		}
 	};
-	console.log('scroll continaer', scrollContainer.current);
 	return (
 		<div ref={app} className="App">
 			<div ref={scrollContainer} className="scroll">
 				<div className="background">
 					<div className="components-foreground">
-						<IndexSection />
+						<CspIndex />
 					</div>
 				</div>
 			</div>
-			<PageNavigation section1="Background1Euff" section2="Solutions1Euff" section3="UI-Design1Euff" section4="Development1Euff" nextProject="/" />
+			<PageNavigation section1="Background1csp" section2="Solutions1csp" section3="UI-Design1csp" section4="Development1csp" nextProject="/euff" />
 		</div>
 	);
-}
+};
+
+export default CSP;

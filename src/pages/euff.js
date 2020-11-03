@@ -1,20 +1,16 @@
 import React, { useRef, useEffect } from 'react';
 import useWindowSize from '../util-functions/useWindowSize';
-import '../styles/reset.css';
-import '../styles/global.css';
-import '../styles/App.css';
-import IndexSection from '../home-page-sections/IndexSection';
+import EuffIndex from '../euff-page-sections/EuffIndex';
 import PageNavigation from '../components/PageNavigation';
 
-export default function Home() {
+const Euff = () => {
 	//Hook to grab window size
 	const size = useWindowSize();
 
 	// Ref for parent div and scrolling div
-
 	const app = useRef();
 	const scrollContainer = useRef();
-
+	const pageNavigation = useRef();
 	// Configs
 	const data = {
 		ease: 0.1,
@@ -23,10 +19,10 @@ export default function Home() {
 		rounded: 0
 	};
 
-	// Running scrollrender once page is loaded.
+	// Run scrollrender once page is loaded.
 	useEffect(() => {
 		requestAnimationFrame(() => skewScrolling());
-	});
+	}, []);
 
 	//set the height of the body.
 	useEffect(
@@ -52,29 +48,34 @@ export default function Home() {
 			data.rounded = Math.round(data.previous * 100) / 100;
 
 			// Difference between
-			// const difference = data.current - data.rounded;
-			// const acceleration = difference / size.width;
-			// const velocity = +acceleration;
-			// const skew = velocity * 7.5
+			const difference = data.current - data.rounded;
+			const acceleration = difference / size.width;
+			const velocity = +acceleration;
+			const skew = velocity * 7.5;
 
 			//Assign skew and smooth scrolling to the scroll container
 			scrollContainer.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
+			// pageNavigation.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
 
-			//loop vai raf
+			//loop vai rafd
 			requestAnimationFrame(() => skewScrolling());
 		}
 	};
-	console.log('scroll continaer', scrollContainer.current);
+
 	return (
-		<div ref={app} className="App">
-			<div ref={scrollContainer} className="scroll">
-				<div className="background">
-					<div className="components-foreground">
-						<IndexSection />
+		<div>
+			<div ref={app} className="App">
+				<div ref={scrollContainer} className="scroll">
+					<div className="background">
+						<div className="components-foreground">
+							<EuffIndex datarounded={data.rounded} />
+						</div>
 					</div>
 				</div>
+				<PageNavigation section1="Background1Euff" section2="Solutions1Euff" section3="UI-Design1Euff" section4="Development1Euff" nextProject="/" />
 			</div>
-			<PageNavigation section1="Background1Euff" section2="Solutions1Euff" section3="UI-Design1Euff" section4="Development1Euff" nextProject="/" />
 		</div>
 	);
-}
+};
+
+export default Euff;
