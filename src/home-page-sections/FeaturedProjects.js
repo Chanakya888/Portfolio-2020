@@ -16,15 +16,15 @@ const FeaturedProjects = () => {
 		gsap.set([ '.csp-chars', '.jjn-chars', '.euff-chars', '.tsundoku-chars' ], { y: -25 });
 	}, []);
 	const ShowSubText = (target1, target2, target3) => {
-		gsap.fromTo(target1, 0.2, { y: 25 }, { y: 0, stagger: 0.02, ease: 'Power4.easeOut' });
-		gsap.fromTo(target2, 0.2, { y: 25 }, { y: 0, stagger: 0.02, ease: 'Power4.easeOut' });
+		gsap.fromTo(target1, 0.4, { y: 25 }, { y: 0, stagger: 0.04, ease: 'Power4.easeOut' });
+		gsap.fromTo(target2, 0.4, { y: 25 }, { y: 0, stagger: 0.04, ease: 'Power4.easeOut' }, '+=0.4');
 		gsap.to(target3, 0.5, { css: { color: '#afd0c9' }, ease: 'Power4.easeOut' });
 		gsap.to(target3, 0.5, { css: { '-webkit-text-stroke': '1px #d64b41', ease: 'Power4.easeOut' } });
 	};
 
 	const HideSubText = (target1, target2, target3) => {
-		gsap.to(target1, 0.2, { y: 25, stagger: 0.02, ease: 'Power4.easeIn' });
-		gsap.to(target2, 0.2, { y: 25, stagger: 0.02, ease: 'Power4.easeIn' });
+		gsap.to(target1, 0.4, { y: 25, stagger: 0.04, ease: 'Power4.easeIn' });
+		gsap.to(target2, 0.4, { y: 25, stagger: 0.04, ease: 'Power4.easeIn' });
 		gsap.to(target3, 0.5, { css: { color: '#d64b41' }, ease: 'Power4.easeOut' });
 		gsap.to(target3, 0.5, { css: { '-webkit-text-stroke': '0px #d64b41', ease: 'Power4.easeOut' } });
 	};

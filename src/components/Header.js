@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { gsap, TimelineLite } from 'gsap';
+import { Link } from 'gatsby';
 // import { SplitText } from "../util-functions/SplitText"
 
 function Header(props) {
@@ -25,18 +26,19 @@ function Header(props) {
 	return (
 		<div>
 			<div className="header-inner-items-horizontal-flex">
-				<button
-					onMouseOver={() => {
-						splitAnimation('#menu');
-					}}
-					onMouseOut={() => {
-						resetAnimation('#menu');
-					}}
-					className="button-hover"
-				>
-					<h4 id="menu">Menu</h4>
-				</button>
-
+				<Link to="/">
+					<button
+						onMouseOver={() => {
+							splitAnimation('#menu');
+						}}
+						onMouseOut={() => {
+							resetAnimation('#menu');
+						}}
+						className="button-hover"
+					>
+						<h4 id="menu">Portfolio</h4>
+					</button>
+				</Link>
 				<button
 					onMouseOver={() => {
 						splitAnimation('#contact');

@@ -26,11 +26,15 @@ const PageNavigation = (props) => {
 	const section4Ref = useRef(null);
 	const section5Ref = useRef(null);
 
-	if (props.nextProject === 'none') {
-		if (section5Ref.current !== null) {
-			section5Ref.current.style.display = 'none';
+	//hiding arrrow for home page
+	useEffect(() => {
+		if (props.nextProject === 'none') {
+			if (section5Ref.current !== null) {
+				section5Ref.current.style.display = 'none';
+			}
 		}
-	}
+	}, []);
+
 	const moveToThisSection = (section) => {
 		let distance = document.getElementById(section).getBoundingClientRect();
 		window.scrollBy(0, distance.y - 75);
@@ -40,26 +44,23 @@ const PageNavigation = (props) => {
 		if (section.current !== null) {
 			section.current.classList.add('circle-full-opacity');
 		}
-		// document.getElementById(`${section}-circle`).classList.add('circle-full-opacity');
 	};
 	const sectionLeave = (section) => {
 		if (section.current !== null) {
 			section.current.classList.remove('circle-full-opacity');
 		}
-		// document.getElementById(`${section}-circle`).classList.remove('circle-full-opacity');
 	};
 
 	const showTheText = (section) => {
-		gsap.to(`.${section}-text-chars`, 0.2, { y: 0, stagger: 0.02, ease: 'Power4.easeOut' });
+		gsap.to(`.${section}-text-chars`, 0.4, { y: 0, stagger: 0.04, ease: 'Power4.easeOut' });
 	};
 
 	const hideTheText = (section) => {
-		gsap.to(`.${section}-text-chars`, 0.2, { y: 60, stagger: 0.02, ease: 'Power4.easeIn' });
+		gsap.to(`.${section}-text-chars`, 0.4, { y: 60, stagger: 0.04, ease: 'Power4.easeIn' });
 	};
 
 	//scroll triggers, run after all the components are loaded
 	useEffect(() => {
-		// gsap.set('.page-navigation-text', { y: distanceThatTextWillGoBelow });
 		ScrollTrigger.create({
 			trigger: `#${section1}`,
 			start: 'top 60%',
