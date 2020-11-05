@@ -74,7 +74,7 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
-			<PageNavigation section1="Background1Euff" section2="Solutions1Euff" section3="UI-Design1Euff" section4="Development1Euff" nextProject="/" />
+			<PageNavigation section1="Hey1home" section2="Projects1home" section3="About1home" section4="Status1home" nextProject="none" />
 		</div>
 	);
 }

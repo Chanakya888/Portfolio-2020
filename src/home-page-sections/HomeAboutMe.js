@@ -3,7 +3,7 @@ import ButtonComponent from '../components/ButtonComponent';
 
 const HomeAboutMe = () => {
 	return (
-		<div>
+		<section id="About1home">
 			<h2>About me</h2>
 			<div className="content-and-section-gap">
 				<p>I have always been interested in human centred design to solve emerging issues in my surroundings and this is what I would want to continue exploring and pursue in greater depths upon my graduation.</p>
@@ -14,7 +14,7 @@ const HomeAboutMe = () => {
 					<ButtonComponent buttonName="Know more" />
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

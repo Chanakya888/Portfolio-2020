@@ -29,7 +29,7 @@ const FeaturedProjects = () => {
 		gsap.to(target3, 0.5, { css: { '-webkit-text-stroke': '0px #d64b41', ease: 'Power4.easeOut' } });
 	};
 	return (
-		<div>
+		<section id="Projects1home">
 			<h2>Featured Projects</h2>
 			<div className="content-and-section-gap-2">
 				<Link to="/csp">
@@ -118,7 +118,7 @@ const FeaturedProjects = () => {
 					<div className="horizontal-rule" />
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

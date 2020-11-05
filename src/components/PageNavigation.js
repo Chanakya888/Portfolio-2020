@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'gatsby';
 import gsap from 'gsap';
 import { SplitText } from '../util-functions/SplitText';
@@ -19,18 +19,34 @@ const PageNavigation = (props) => {
 	const section3Name = section3.split('1');
 	const section4Name = section4.split('1');
 
-	const distanceThatTextWillGoBelow = 60;
+	//useRefs
+	const section1Ref = useRef(null);
+	const section2Ref = useRef(null);
+	const section3Ref = useRef(null);
+	const section4Ref = useRef(null);
+	const section5Ref = useRef(null);
+
+	if (props.nextProject === 'none') {
+		if (section5Ref.current !== null) {
+			section5Ref.current.style.display = 'none';
+		}
+	}
 	const moveToThisSection = (section) => {
-		console.log('move this function executing');
 		let distance = document.getElementById(section).getBoundingClientRect();
 		window.scrollBy(0, distance.y - 75);
 	};
 
 	const sectionEnter = (section) => {
-		document.getElementById(`${section}-circle`).classList.add('circle-full-opacity');
+		if (section.current !== null) {
+			section.current.classList.add('circle-full-opacity');
+		}
+		// document.getElementById(`${section}-circle`).classList.add('circle-full-opacity');
 	};
 	const sectionLeave = (section) => {
-		document.getElementById(`${section}-circle`).classList.remove('circle-full-opacity');
+		if (section.current !== null) {
+			section.current.classList.remove('circle-full-opacity');
+		}
+		// document.getElementById(`${section}-circle`).classList.remove('circle-full-opacity');
 	};
 
 	const showTheText = (section) => {
@@ -41,44 +57,44 @@ const PageNavigation = (props) => {
 		gsap.to(`.${section}-text-chars`, 0.2, { y: 60, stagger: 0.02, ease: 'Power4.easeIn' });
 	};
 
-	//scroll triggers
+	//scroll triggers, run after all the components are loaded
 	useEffect(() => {
 		// gsap.set('.page-navigation-text', { y: distanceThatTextWillGoBelow });
 		ScrollTrigger.create({
 			trigger: `#${section1}`,
 			start: 'top 60%',
 			end: 'bottom 60%',
-			onEnter: () => sectionEnter(section1),
-			onLeave: () => sectionLeave(section1),
-			onEnterBack: () => sectionEnter(section1),
-			onLeaveBack: () => sectionLeave(section1)
+			onEnter: () => sectionEnter(section1Ref),
+			onLeave: () => sectionLeave(section1Ref),
+			onEnterBack: () => sectionEnter(section1Ref),
+			onLeaveBack: () => sectionLeave(section1Ref)
 		});
 		ScrollTrigger.create({
 			trigger: `#${section2}`,
 			start: 'top 60%',
 			end: 'bottom 60%',
-			onEnter: () => sectionEnter(section2),
-			onLeave: () => sectionLeave(section2),
-			onEnterBack: () => sectionEnter(section2),
-			onLeaveBack: () => sectionLeave(section2)
+			onEnter: () => sectionEnter(section2Ref),
+			onLeave: () => sectionLeave(section2Ref),
+			onEnterBack: () => sectionEnter(section2Ref),
+			onLeaveBack: () => sectionLeave(section2Ref)
 		});
 		ScrollTrigger.create({
 			trigger: `#${section3}`,
 			start: 'top 60%',
 			end: 'bottom 60%',
-			onEnter: () => sectionEnter(section3),
-			onLeave: () => sectionLeave(section3),
-			onEnterBack: () => sectionEnter(section3),
-			onLeaveBack: () => sectionLeave(section3)
+			onEnter: () => sectionEnter(section3Ref),
+			onLeave: () => sectionLeave(section3Ref),
+			onEnterBack: () => sectionEnter(section3Ref),
+			onLeaveBack: () => sectionLeave(section3Ref)
 		});
 		ScrollTrigger.create({
 			trigger: `#${section4}`,
 			start: 'top 60%',
 			end: 'bottom 60%',
-			onEnter: () => sectionEnter(section4),
-			onLeave: () => sectionLeave(section4),
-			onEnterBack: () => sectionEnter(section4),
-			onLeaveBack: () => sectionLeave(section4)
+			onEnter: () => sectionEnter(section4Ref),
+			onLeave: () => sectionLeave(section4Ref),
+			onEnterBack: () => sectionEnter(section4Ref),
+			onLeaveBack: () => sectionLeave(section4Ref)
 		});
 	}, []);
 
@@ -105,7 +121,7 @@ const PageNavigation = (props) => {
 					onMouseOut={() => hideTheText(section1)}
 				>
 					{/* <div className="circle-boundary"> */}
-					<div className="circle" id={`${section1}-circle`} />
+					<div className="circle" ref={section1Ref} id={`${section1}-circle`} />
 					{/* </div> */}
 					<div className="text-background">
 						<p className="page-navigation-text" id={`${section1}-text`}>
@@ -123,7 +139,7 @@ const PageNavigation = (props) => {
 					onMouseOut={() => hideTheText(section2)}
 				>
 					{/* <div className="circle-boundary"> */}
-					<div className="circle" id={`${section2}-circle`} />
+					<div className="circle" ref={section2Ref} id={`${section2}-circle`} />
 					{/* </div> */}
 					<div className="text-background">
 						<p className="page-navigation-text" id={`${section2}-text`}>
@@ -142,7 +158,7 @@ const PageNavigation = (props) => {
 					onMouseOut={() => hideTheText(section3)}
 				>
 					{/* <div className="circle-boundary"> */}
-					<div className="circle" id={`${section3}-circle`} />
+					<div className="circle" ref={section3Ref} id={`${section3}-circle`} />
 					{/* </div> */}
 					<div className="text-background">
 						<p className="page-navigation-text" id={`${section3}-text`}>
@@ -162,7 +178,7 @@ const PageNavigation = (props) => {
 				>
 					{/* <div className="circle-boundary"> */}
 					{/* </div> */}
-					<div className="circle" id={`${section4}-circle`} />
+					<div className="circle" ref={section4Ref} id={`${section4}-circle`} />
 					<div className="text-background">
 						<p className="page-navigation-text" id={`${section4}-text`}>
 							{section4Name[0]}
@@ -171,7 +187,7 @@ const PageNavigation = (props) => {
 				</div>
 				{/* Button five */}
 				<Link to={`${props.nextProject}`}>
-					<div className="circle-button-wrapper" onMouseOver={() => showTheText(section5)} onMouseOut={() => hideTheText(section5)}>
+					<div className="circle-button-wrapper" ref={section5Ref} onMouseOver={() => showTheText(section5)} onMouseOut={() => hideTheText(section5)}>
 						<div className="svg-container" id="Next-Project-circle">
 							<svg xmlns="http://www.w3.org/2000/svg" width="15.513" height="10.346" viewBox="0 0 15.513 10.346">
 								<path
