@@ -6,9 +6,13 @@ const HomeAboutMe = () => {
 		<section id="About1home">
 			<h2>About me</h2>
 			<div className="content-and-section-gap">
-				<p>I have always been interested in human centred design to solve emerging issues in my surroundings and this is what I would want to continue exploring and pursue in greater depths upon my graduation.</p>
+				<p>
+					I am currently in my 4th year of computer science engineering, I have always been interested in technologies to solve emerging issues in my surroundings, one such technology that showcases a lot of potential to me is blockchain technology, and this is what I plan to continue
+					exploring and pursue in greater depths upon my graduation.
+				</p>
 				<p className="p-padding-top">
-					I believe being from a computer science background, I was exposed to understanding complex algorithms and applying them. This exposure makes my design be reasonable and creative. Being able to understand design principles, my development can be more clear and delightful.
+					Coming from a computer science background, I was exposed to understanding and applying complex algorithms. Designing and developing web apps for the past couple of years which focus on user interaction and experience, I believe these experiences will help me make user experience
+					choices in an untapped field like blockchain.
 				</p>
 				<div className="content-and-section-gap-2 ">
 					<ButtonComponent buttonName="Know more" />
