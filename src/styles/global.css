@@ -159,6 +159,7 @@ li {
 
 .h1-and-menu-space {
   padding-top: 20px;
+
 }
 
 /* .p-padding-top {
@@ -178,6 +179,13 @@ li {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   padding-right: 20px;
+}
+
+.experience-grid-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content;
+  row-gap: 40px;
 }
 
 .content-and-section-gap-2 {
@@ -254,6 +262,12 @@ li {
   .grid-wrapper {
     display: flex;
     justify-content: space-between;
+  }
+
+  .experience-grid-wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.7fr 1fr;
+    padding-top: 20px;
   }
 
   li {
@@ -395,6 +409,10 @@ li {
 
   .h1-width {
     width: 70%;
+  }
+
+  .experience-grid-wrapper {
+    row-gap: 50px;
   }
 
   /* .p-padding-top {

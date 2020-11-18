@@ -16,7 +16,7 @@ investment.</p><p>The goal of the project is to redesign and develop the website
 showcasing CSP as an investment brand. The client desired a CMS 
 which allows them to edit any content on the website, including 
 updating or deleting team members and investments. </p>"
-				agency="Wishbox studio"
+				agency="<li>Wishbox studio</li>"
 				roles="<li>UI/UX Designer</li><li>Developer</li>"
 				missions="<li>Wireframing</li><li>UI Design</li><li>Development</li>"
 				tools="<li>AdobeXD</li><li>Gatsby JS</li><li>Graph QL</li><li>Contentful CMS</li>"

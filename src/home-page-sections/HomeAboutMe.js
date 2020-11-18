@@ -1,6 +1,6 @@
 import React from 'react';
 import ButtonComponent from '../components/ButtonComponent';
-
+import { Link } from 'gatsby';
 const HomeAboutMe = () => {
 	return (
 		<section id="About1home">
@@ -15,7 +15,9 @@ const HomeAboutMe = () => {
 					choices in an untapped field like blockchain.
 				</p>
 				<div className="content-and-section-gap-2 ">
-					<ButtonComponent buttonName="Know more" />
+					<Link to="/about">
+						<ButtonComponent buttonName="Know more" />
+					</Link>
 				</div>
 			</div>
 		</section>
