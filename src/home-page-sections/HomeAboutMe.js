@@ -11,12 +11,12 @@ const HomeAboutMe = () => {
 					exploring and pursue in greater depths upon my graduation.
 				</p>
 				<p className="p-padding-top">
-					Coming from a computer science background, I was exposed to understanding and applying complex algorithms. Designing and developing web apps for the past couple of years which focus on user interaction and experience, I believe these experiences will help me make user experience
-					choices in an untapped field like blockchain.
+					Coming from a computer science background, I was exposed to understanding and applying complex algorithms. Designing and developing web apps for the past couple of years which focus on user interaction and experience, I believe these experiences will help me make better user
+					experience choices in an emerging field like blockchain.
 				</p>
 				<div className="content-and-section-gap-2 ">
 					<Link to="/about">
-						<ButtonComponent buttonName="Know more" />
+						<ButtonComponent buttonName="Know more" buttonId="know" />
 					</Link>
 				</div>
 			</div>
