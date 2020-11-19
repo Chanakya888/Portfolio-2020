@@ -17,7 +17,7 @@ const ButtonComponent = (props) => {
 	};
 	return (
 		<div
-			style={{ width: 'max-content' }}
+			style={{ width: 'max-content', display: 'inline-block' }}
 			onMouseOver={() => {
 				splitAnimation(`#${props.buttonId}`);
 			}}

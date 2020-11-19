@@ -19,7 +19,7 @@ updating or deleting team members and investments. </p>"
 				agency="<li>Wishbox studio</li>"
 				roles="<li>UI/UX Designer</li><li>Developer</li>"
 				missions="<li>Wireframing</li><li>UI Design</li><li>Development</li>"
-				tools="<li>AdobeXD</li><li>Gatsby JS</li><li>Graph QL</li><li>Contentful CMS</li>"
+				tools="<li>Adobe XD</li><li>Gatsby JS</li><li>Graph QL</li><li>Contentful CMS</li>"
 			/>
 		</section>
 	);
