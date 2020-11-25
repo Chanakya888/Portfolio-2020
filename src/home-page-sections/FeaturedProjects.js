@@ -32,9 +32,29 @@ const FeaturedProjects = () => {
 		<section id="Projects1home">
 			<h2>Featured Projects</h2>
 			<div className="content-and-section-gap-2">
+				<div>
+					<div className="horizontal-rule" />
+					<div
+						className="featured-project-block"
+						onMouseEnter={() => {
+							ShowSubText('.tsundoku-chars', '.tsundoku-chars', '#tsundoku-stroke-title');
+						}}
+						onMouseLeave={() => {
+							HideSubText('.tsundoku-chars', '.tsundoku-chars', '#tsundoku-stroke-title');
+						}}
+					>
+						<div className="container-of-subtitle">
+							<h6 id="tsundoku-left-subtitle">Blockchain</h6>
+						</div>
+						<h3 id="tsundoku-stroke-title">KYC</h3>
+						<div className="container-of-subtitle">
+							<h6 id="tsundoku-right-subtitle">Nov - Dec 2020</h6>
+						</div>
+					</div>
+					<div className="horizontal-rule" />
+				</div>
 				<Link to="/csp">
 					<div>
-						<div className="horizontal-rule" />
 						<div
 							className="featured-project-block"
 							onMouseEnter={() => {
@@ -97,26 +117,6 @@ const FeaturedProjects = () => {
 						<div className="horizontal-rule" />
 					</div>
 				</Link>
-				<div>
-					<div
-						className="featured-project-block"
-						onMouseEnter={() => {
-							ShowSubText('.tsundoku-chars', '.tsundoku-chars', '#tsundoku-stroke-title');
-						}}
-						onMouseLeave={() => {
-							HideSubText('.tsundoku-chars', '.tsundoku-chars', '#tsundoku-stroke-title');
-						}}
-					>
-						<div className="container-of-subtitle">
-							<h6 id="tsundoku-left-subtitle">Magazine</h6>
-						</div>
-						<h3 id="tsundoku-stroke-title">Tsundoku</h3>
-						<div className="container-of-subtitle">
-							<h6 id="tsundoku-right-subtitle">Jan - Feb 2019</h6>
-						</div>
-					</div>
-					<div className="horizontal-rule" />
-				</div>
 			</div>
 		</section>
 	);

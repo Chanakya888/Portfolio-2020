@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'gatsby';
 import gsap from 'gsap';
 import { SplitText } from '../util-functions/SplitText';
@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 // component
 const PageNavigation = (props) => {
+	const [ goDownBy, setGoDownBy ] = useState(true);
 	//id names
 	const section1 = `${props.section1}`;
 	const section2 = `${props.section2}`;
@@ -26,6 +27,8 @@ const PageNavigation = (props) => {
 	const section4Ref = useRef(null);
 	const section5Ref = useRef(null);
 
+	//settinng goDownBy state
+
 	//hiding arrrow for home page
 	useEffect(() => {
 		if (props.nextProject === 'none') {
@@ -43,11 +46,13 @@ const PageNavigation = (props) => {
 	const sectionEnter = (section) => {
 		if (section.current !== null) {
 			section.current.classList.add('circle-full-opacity');
+			section.current.nextSibling.firstChild.classList.add('text-full-opacity');
 		}
 	};
 	const sectionLeave = (section) => {
 		if (section.current !== null) {
 			section.current.classList.remove('circle-full-opacity');
+			section.current.nextSibling.firstChild.classList.remove('text-full-opacity');
 		}
 	};
 
@@ -56,8 +61,26 @@ const PageNavigation = (props) => {
 	};
 
 	const hideTheText = (section) => {
-		gsap.to(`.${section}-text-chars`, 0.4, { y: 60, stagger: 0.04, ease: 'Power4.easeIn' });
+		let turnOffHide = 60;
+		if (window.innerWidth < 768) {
+			turnOffHide = 0;
+		}
+		gsap.to(`.${section}-text-chars`, 0.4, { y: turnOffHide, stagger: 0.04, ease: 'Power4.easeIn' });
 	};
+
+	//split chars
+	useEffect(() => {
+		let goDownBy = 60;
+		if (window.innerWidth < 768) {
+			goDownBy = 0;
+		}
+		new SplitText(`#${section1}-text`, { type: 'chars', charsClass: `${section1}-text-chars` });
+		new SplitText(`#${section2}-text`, { type: 'chars', charsClass: `${section2}-text-chars` });
+		new SplitText(`#${section3}-text`, { type: 'chars', charsClass: `${section3}-text-chars` });
+		new SplitText(`#${section4}-text`, { type: 'chars', charsClass: `${section4}-text-chars` });
+		new SplitText(`#${section5}-text`, { type: 'chars', charsClass: `${section5}-text-chars` });
+		gsap.set([ `.${section1}-text-chars`, `.${section2}-text-chars`, `.${section3}-text-chars`, `.${section4}-text-chars`, `.${section5}-text-chars` ], { y: goDownBy });
+	}, []);
 
 	//scroll triggers, run after all the components are loaded
 	useEffect(() => {
@@ -97,16 +120,6 @@ const PageNavigation = (props) => {
 			onEnterBack: () => sectionEnter(section4Ref),
 			onLeaveBack: () => sectionLeave(section4Ref)
 		});
-	}, []);
-
-	//split chars
-	useEffect(() => {
-		new SplitText(`#${section1}-text`, { type: 'chars', charsClass: `${section1}-text-chars` });
-		new SplitText(`#${section2}-text`, { type: 'chars', charsClass: `${section2}-text-chars` });
-		new SplitText(`#${section3}-text`, { type: 'chars', charsClass: `${section3}-text-chars` });
-		new SplitText(`#${section4}-text`, { type: 'chars', charsClass: `${section4}-text-chars` });
-		new SplitText(`#${section5}-text`, { type: 'chars', charsClass: `${section5}-text-chars` });
-		gsap.set([ `.${section1}-text-chars`, `.${section2}-text-chars`, `.${section3}-text-chars`, `.${section4}-text-chars`, `.${section5}-text-chars` ], { y: 60 });
 	}, []);
 
 	return (
@@ -187,8 +200,9 @@ const PageNavigation = (props) => {
 					</div>
 				</div>
 				{/* Button five */}
-				<Link to={`${props.nextProject}`}>
-					<div className="circle-button-wrapper" ref={section5Ref} onMouseOver={() => showTheText(section5)} onMouseOut={() => hideTheText(section5)}>
+
+				<div className="circle-button-wrapper" ref={section5Ref} onMouseOver={() => showTheText(section5)} onMouseOut={() => hideTheText(section5)}>
+					<Link to={`${props.nextProject}`}>
 						<div className="svg-container" id="Next-Project-circle">
 							<svg xmlns="http://www.w3.org/2000/svg" width="15.513" height="10.346" viewBox="0 0 15.513 10.346">
 								<path
@@ -205,8 +219,8 @@ const PageNavigation = (props) => {
 								Next Project
 							</p>
 						</div>
-					</div>
-				</Link>
+					</Link>
+				</div>
 			</div>
 		</div>
 	);

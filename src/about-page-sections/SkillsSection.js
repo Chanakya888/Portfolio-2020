@@ -5,7 +5,7 @@ const SkillsSection = () => {
 	const sub1 = 'Blockchain';
 	const sub2 = 'Web';
 	const sub3 = 'Media';
-	const sub4 = 'Languages';
+	const sub4 = 'Design';
 	const title = 'My Skills';
 	return (
 		<div className="section-gap">
@@ -16,6 +16,7 @@ const SkillsSection = () => {
 					<div className="agency">
 						<h5>{sub1}</h5>
 						<ul>
+							<li>Solidity</li>
 							<li>Truffle</li>
 							<li>Remix</li>
 							<li>Hyperledger</li>
@@ -33,7 +34,7 @@ const SkillsSection = () => {
 					<div className="context-point tools">
 						<h5>{sub3}</h5>
 						<ul>
-							<li>Final Cut Pro X</li>
+							<li>Final Cut ProX</li>
 							<li>Adobe After Effects</li>
 							<li>Adobe Photoshop</li>
 							<li>Adobe XD</li>
@@ -42,10 +43,10 @@ const SkillsSection = () => {
 					<div className="context-point missions">
 						<h5>{sub4}</h5>
 						<ul>
-							<li>Solidity</li>
-							<li>Javascript</li>
-							<li>Python</li>
-							<li>Java</li>
+							<li>UX Research</li>
+							<li>Wireframing</li>
+							<li>Prototyping</li>
+							<li>UI Design</li>
 						</ul>
 					</div>
 				</div>
