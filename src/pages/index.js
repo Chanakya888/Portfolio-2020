@@ -15,7 +15,7 @@ export default function Home() {
 			<canvas id="noise" className="noise" />
 			<div className="components-foreground">
 				<IndexSection />
-				<PageNavigation section1="Hey1home" section2="Projects1home" section3="About1home" section4="Status1home" nextProject="none" />
+				{/* <PageNavigation section1="Hey1home" section2="Projects1home" section3="About1home" section4="Status1home" nextProject="none" /> */}
 			</div>
 		</div>
 	);

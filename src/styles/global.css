@@ -453,6 +453,7 @@ li {
     justify-content: start;
     align-items: center;
     cursor: pointer;
+    width: 100%;
   }
 
   .circle-boundary {
@@ -475,13 +476,22 @@ li {
   }
 
   .svg-container {
-    width: 20px;
-    padding-right: 0px;
-    justify-items: start;
+    padding-right: 0;
+    display: flex;
+    align-items: center;
+    height: auto;
+  }
+
+  .circle-group {
+    justify-content: start;
   }
 
   .page-navigation-text {
     opacity: 1;
+  }
+
+  a {
+    display: flex;
   }
 
   .circle-full-opacity {

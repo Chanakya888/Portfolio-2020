@@ -32,7 +32,7 @@ const FeaturedProjects = () => {
 		<section id="Projects1home">
 			<h2>Featured Projects</h2>
 			<div className="content-and-section-gap-2">
-				<div>
+				<div style={{ width: '100%' }}>
 					<div className="horizontal-rule" />
 					<div
 						className="featured-project-block"
@@ -54,7 +54,7 @@ const FeaturedProjects = () => {
 					<div className="horizontal-rule" />
 				</div>
 				<Link to="/csp">
-					<div>
+					<div style={{ width: '100%' }}>
 						<div
 							className="featured-project-block"
 							onMouseEnter={() => {
@@ -75,28 +75,30 @@ const FeaturedProjects = () => {
 						<div className="horizontal-rule" />
 					</div>
 				</Link>
-				<div>
-					<div
-						className="featured-project-block"
-						onMouseEnter={() => {
-							ShowSubText('.jjn-chars', '.jjn-chars', '#jjn-stroke-title');
-						}}
-						onMouseLeave={() => {
-							HideSubText('.jjn-chars', '.jjn-chars', '#jjn-stroke-title');
-						}}
-					>
-						<div className="container-of-subtitle">
-							<h6 id="jjn-left-subtitle">Research and Blog</h6>
+				<Link to="/jjn">
+					<div style={{ width: '100%' }}>
+						<div
+							className="featured-project-block"
+							onMouseEnter={() => {
+								ShowSubText('.jjn-chars', '.jjn-chars', '#jjn-stroke-title');
+							}}
+							onMouseLeave={() => {
+								HideSubText('.jjn-chars', '.jjn-chars', '#jjn-stroke-title');
+							}}
+						>
+							<div className="container-of-subtitle">
+								<h6 id="jjn-left-subtitle">Research and Blog</h6>
+							</div>
+							<h3 id="jjn-stroke-title">jjn org.</h3>
+							<div className="container-of-subtitle">
+								<h6 id="jjn-right-subtitle">May - July 2020</h6>
+							</div>
 						</div>
-						<h3 id="jjn-stroke-title">jjn org.</h3>
-						<div className="container-of-subtitle">
-							<h6 id="jjn-right-subtitle">May - July 2020</h6>
-						</div>
+						<div className="horizontal-rule" />
 					</div>
-					<div className="horizontal-rule" />
-				</div>
+				</Link>
 				<Link to="/euff">
-					<div>
+					<div style={{ width: '100%' }}>
 						<div
 							className="featured-project-block"
 							onMouseEnter={() => {

@@ -122,6 +122,19 @@ const PageNavigation = (props) => {
 		});
 	}, []);
 
+	//Hide circles
+	useEffect(() => {
+		console.log('sec4 out', section4);
+		if (section4 == 'none') {
+			console.log('sec4', section4);
+			document.getElementById('section4-wrapper').style.display = 'none';
+		}
+
+		if (props.nextProject == 'none') {
+			document.getElementById('nextProject').style.display = 'none';
+		}
+	}, []);
+
 	return (
 		<div id="pageNavigation" className="page-navigation">
 			<div className="circle-group">
@@ -184,6 +197,7 @@ const PageNavigation = (props) => {
 				{/* Button four */}
 				<div
 					className="circle-button-wrapper"
+					id="section4-wrapper"
 					onClick={() => {
 						moveToThisSection(section4);
 					}}
@@ -200,8 +214,7 @@ const PageNavigation = (props) => {
 					</div>
 				</div>
 				{/* Button five */}
-
-				<div className="circle-button-wrapper" ref={section5Ref} onMouseOver={() => showTheText(section5)} onMouseOut={() => hideTheText(section5)}>
+				<div className="circle-button-wrapper" ref={section5Ref} id="nextProject" onMouseOver={() => showTheText(section5)} onMouseOut={() => hideTheText(section5)}>
 					<Link to={`${props.nextProject}`}>
 						<div className="svg-container" id="Next-Project-circle">
 							<svg xmlns="http://www.w3.org/2000/svg" width="15.513" height="10.346" viewBox="0 0 15.513 10.346">
