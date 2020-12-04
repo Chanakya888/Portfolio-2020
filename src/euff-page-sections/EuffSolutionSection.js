@@ -1,7 +1,28 @@
 import React from 'react';
 import SolutionLayout from '../layoutSections/SolutionLayout';
+import { graphql, useStaticQuery } from 'gatsby';
+import TwoImagesContainer from '../layoutSections/TwoImagesContainer';
 
 const EuffSolutionSection = () => {
+	const query = useStaticQuery(graphql`
+		query {
+			image1: file(relativePath: { eq: "euff-wire-1.jpg" }) {
+				childImageSharp {
+					fluid {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			image2: file(relativePath: { eq: "euff-wire-2.png" }) {
+				childImageSharp {
+					fluid {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+		}
+	`);
+
 	return (
 		<section id="Solutions1Euff">
 			<div>
@@ -26,6 +47,7 @@ schedule in the increasing order of timestamp along with the location
 of the event. There is brief information about each film, which takes to 
 individual film page which has detailed information about the film.</p>" />
 			</div>
+			<TwoImagesContainer image1={query.image1.childImageSharp.fluid} image1Id="euff-wire-1" image2={query.image2.childImageSharp.fluid} image2Id="euff-wire-2" />
 		</section>
 	);
 };

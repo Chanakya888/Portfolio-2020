@@ -6,7 +6,7 @@ import HomeAboutMe from '../home-page-sections/HomeAboutMe';
 import Footer from '../components/Footer';
 function Home() {
 	return (
-		<div className="main-container">
+		<div className="main-container main-container-add-top-padding main-container-add-bottom-padding">
 			<div>
 				<Header />
 				<section id="Hey1home">

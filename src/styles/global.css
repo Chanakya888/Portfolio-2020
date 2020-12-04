@@ -19,6 +19,8 @@
   font-display: swap
 }
 
+
+
 :root {
   --primary-color: #d64b41;
   --background-color: #afd0c9;
@@ -35,6 +37,7 @@ html {
 body * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* overflow: hidden; */
 
 }
 
@@ -241,6 +244,10 @@ li {
   padding-bottom: 60px;
 }
 
+.main-container-add-bottom-padding {
+  padding-bottom: 90px;
+}
+
 .circle-full-opacity {
   opacity: 1;
 }
@@ -262,6 +269,31 @@ li {
   opacity: 0.5;
 }
 
+.cover-image {
+  height: 700px;
+}
+
+.two-images-container {
+  margin-top: 60px;
+}
+
+.image-container-1,
+.image-container-2 {
+  margin-top: 40px;
+}
+
+.mobile-image-height-and-width {
+  object-fit: contain;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.desktop-images-container {
+  margin-top: 20px;
+}
+
+.desktop-image-container {
+  margin-top: 20px;
+}
 
 /* **For small ipads and tablets** */
 @media only screen and (min-width: 768px) {
@@ -314,6 +346,8 @@ li {
     padding-right: 10%;
   }
 
+
+
   .h1-and-menu-space {
     padding-top: 35px;
   }
@@ -344,6 +378,23 @@ li {
   li {
     padding-top: 12px;
     font-size: 16px;
+  }
+
+  .two-images-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .desktop-images-container {
+    margin-top: 50px;
+  }
+
+  .desktop-image-container {
+    margin-top: 50px;
+  }
+
+  .cover-image {
+    height: 100%;
   }
 }
 
@@ -401,6 +452,11 @@ li {
     padding-right: 20%;
     display: flex;
     justify-content: start;
+    padding-top: 0px;
+  }
+
+  .main-container-add-top-padding {
+    padding-top: 90px;
   }
 
   /* svg */
@@ -538,5 +594,18 @@ li {
   li {
     padding-top: 15px;
     font-size: 18px;
+  }
+
+  /* .two-images-container {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 5px;
+    padding-top: 100px;
+  } */
+
+  .mobile-image-height-and-width {
+    height: 812px;
+    width: 375px;
+
   }
 }

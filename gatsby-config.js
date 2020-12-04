@@ -6,5 +6,16 @@
 
 module.exports = {
 	/* Your site config here */
-	plugins: [ `gatsby-plugin-transition-link` ]
+	plugins: [
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `images`,
+				path: `${__dirname}/src/assets/images`
+			}
+		},
+		`gatsby-plugin-transition-link`,
+		`gatsby-transformer-sharp`,
+		`gatsby-plugin-sharp`
+	]
 };

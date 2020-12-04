@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { gsap, TimelineLite } from 'gsap';
 import { Link } from 'gatsby';
 // import { SplitText } from "../util-functions/SplitText"
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 function Header(props) {
 	useEffect(() => {
@@ -26,7 +27,7 @@ function Header(props) {
 	return (
 		<div>
 			<div className="header-inner-items-horizontal-flex">
-				<Link to="/">
+				<AniLink cover to="/" direction="left" duration={2} bg="#d64b41">
 					<button
 						onMouseOver={() => {
 							splitAnimation('#menu');
@@ -38,7 +39,7 @@ function Header(props) {
 					>
 						<h4 id="menu">Portfolio</h4>
 					</button>
-				</Link>
+				</AniLink>
 				<button
 					onMouseOver={() => {
 						splitAnimation('#contact');
