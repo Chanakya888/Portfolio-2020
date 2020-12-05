@@ -11,7 +11,7 @@ const JJN = () => {
 			<canvas id="noise" className="noise" />
 			<div className="components-foreground">
 				<JJNIndex />
-				<PageNavigation section1="Background1JJN" section2="IA1JJN" section3="UI-Design1JJN" section4="none" nextProject="/euff" />
+				<PageNavigation section1="Background1JJN" section2="IA1JJN" section3="UI-Design1JJN" section4="none" nextProject="/euff" creditsId="jjn-credits-container" />
 			</div>
 		</div>
 	);

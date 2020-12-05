@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import ButtonComponent from '../components/ButtonComponent';
 import CspBackgroundSection from './CspBackgroundSection';
@@ -8,7 +8,15 @@ import CspDevelopmentSection from './CspDevelopmentSection';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import Footer from '../components/Footer';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { setTitleText, animateLines, buttonAnimation } from '../util-functions/componentAnimations';
 const CspIndex = () => {
+	useEffect(() => {
+		setTitleText('csp-title-text');
+		animateLines('csp-title-text');
+		buttonAnimation();
+		setTitleText('csp-end-title-text');
+	}, []);
 	const query = useStaticQuery(graphql`
 		query {
 			euffImages: file(relativePath: { eq: "csp-cover.png" }) {
@@ -20,13 +28,23 @@ const CspIndex = () => {
 			}
 		}
 	`);
+	useEffect(() => {
+		ScrollTrigger.create({
+			trigger: '#csp-end-title-text',
+			start: 'top 80%',
+			onEnter: () => animateLines('csp-end-title-text', 'no-delay'),
+			onLeave: () => {},
+			onEnterBack: () => {},
+			onLeaveBack: () => {}
+		});
+	}, []);
 	return (
 		<div>
 			<div className="main-container main-container-add-top-padding">
-				<div>
+				<div style={{ width: '100%' }}>
 					<Header />
 					<div className="h1-and-menu-space">
-						<h1 style={{ marginTop: '5px' }}>
+						<h1 style={{ marginTop: '5px' }} id="csp-title-text">
 							<span>case</span>
 							<span>study of</span>
 							<span>Capital</span>
@@ -34,13 +52,8 @@ const CspIndex = () => {
 							<span>partners</span>
 							<span>singapore</span>
 						</h1>
-						<div className="content-and-section-gap ">
-							<p>
-								Capital Square Partners is a private equity fund manager based in Singapore. It primarily invests in buyouts and control investments in Southeast Asia and India, across multi-geography cross border businesses - with deep sector expertise and focus on technology, media
-								and telecommunications, healthcare and business and consumer services sectors.{' '}
-							</p>
-						</div>
-						<div className="content-and-section-gap-2 ">
+
+						<div className="content-and-section-gap-2">
 							<ButtonComponent buttonName="Visit the website" />
 						</div>
 					</div>
@@ -62,9 +75,11 @@ const CspIndex = () => {
 					{/* Section four */}
 					<CspDevelopmentSection />
 					<div className="section-gap">
-						<h1 style={{ marginTop: '5px' }} className="h1-width">
-							thanks to wishbox studio for their trust and thanks to you for reading!
-						</h1>
+						<div id="csp-credits-container">
+							<h1 style={{ marginTop: '5px' }} className="h1-width " id="csp-end-title-text">
+								thanks to wishbox studio for their trust and thanks to you for reading!
+							</h1>
+						</div>
 					</div>
 					<div className="content-and-section-gap-2">
 						<Footer />

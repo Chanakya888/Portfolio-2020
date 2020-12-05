@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
+
 const ButtonComponent = (props) => {
 	const splitAnimation = (target) => {
 		gsap.to(target, {
@@ -15,6 +16,7 @@ const ButtonComponent = (props) => {
 			ease: 'Power4.easeOut'
 		});
 	};
+
 	return (
 		<div
 			style={{ width: 'max-content', display: 'inline-block' }}
@@ -24,9 +26,15 @@ const ButtonComponent = (props) => {
 			onMouseOut={() => {
 				resetAnimation(`#${props.buttonId}`);
 			}}
+			onFocus={() => {}}
+			role="button"
 		>
-			<h4 id={`${props.buttonId}`}>{props.buttonName}</h4>
-			<div className="horizontal-rule padding-between-hr-and-button" />
+			<div className="button-text-container">
+				<h4 className="button-text" id={`${props.buttonId}`}>
+					{props.buttonName}
+				</h4>
+			</div>
+			<div className="horizontal-rule padding-between-hr-and-button" id="button-horizontal-rule" />
 		</div>
 	);
 };

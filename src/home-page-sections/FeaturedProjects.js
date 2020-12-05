@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { SplitText } from '../util-functions/SplitText';
 import gsap from 'gsap';
-import TransitionLink from 'gatsby-plugin-transition-link';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 const FeaturedProjects = () => {
 	useEffect(() => {
@@ -42,6 +41,7 @@ const FeaturedProjects = () => {
 						onMouseLeave={() => {
 							HideSubText('.tsundoku-chars', '.tsundoku-chars', '#tsundoku-stroke-title');
 						}}
+						role="project-button-to-new-page"
 					>
 						<div className="container-of-subtitle">
 							<h6 id="tsundoku-left-subtitle">Blockchain</h6>
@@ -64,6 +64,7 @@ const FeaturedProjects = () => {
 							onMouseLeave={() => {
 								HideSubText('.csp-chars', '.csp-chars', '#csp-stroke-title');
 							}}
+							role="project-button-to-new-page"
 						>
 							<div className="container-of-subtitle">
 								<h6 id="csp-left-subtitle">Corporate Showcase</h6>
@@ -78,48 +79,54 @@ const FeaturedProjects = () => {
 				</AniLink>
 				{/* </Link> */}
 				{/* <Link to="/jjn"> */}
-				<div style={{ width: '100%' }}>
-					<div
-						className="featured-project-block"
-						onMouseEnter={() => {
-							ShowSubText('.jjn-chars', '.jjn-chars', '#jjn-stroke-title');
-						}}
-						onMouseLeave={() => {
-							HideSubText('.jjn-chars', '.jjn-chars', '#jjn-stroke-title');
-						}}
-					>
-						<div className="container-of-subtitle">
-							<h6 id="jjn-left-subtitle">Research and Blog</h6>
+				<AniLink cover to="/jjn" direction="right" duration={2} bg="#d64b41">
+					<div style={{ width: '100%' }}>
+						<div
+							className="featured-project-block"
+							onMouseEnter={() => {
+								ShowSubText('.jjn-chars', '.jjn-chars', '#jjn-stroke-title');
+							}}
+							onMouseLeave={() => {
+								HideSubText('.jjn-chars', '.jjn-chars', '#jjn-stroke-title');
+							}}
+							role="project-button-to-new-page"
+						>
+							<div className="container-of-subtitle">
+								<h6 id="jjn-left-subtitle">Research and Blog</h6>
+							</div>
+							<h3 id="jjn-stroke-title">jjn org.</h3>
+							<div className="container-of-subtitle">
+								<h6 id="jjn-right-subtitle">May - July 2020</h6>
+							</div>
 						</div>
-						<h3 id="jjn-stroke-title">jjn org.</h3>
-						<div className="container-of-subtitle">
-							<h6 id="jjn-right-subtitle">May - July 2020</h6>
-						</div>
+						<div className="horizontal-rule" />
 					</div>
-					<div className="horizontal-rule" />
-				</div>
+				</AniLink>
 				{/* </Link> */}
 				{/* <Link to="/euff"> */}
-				<div style={{ width: '100%' }}>
-					<div
-						className="featured-project-block"
-						onMouseEnter={() => {
-							ShowSubText('.euff-chars', '.euff-chars', '#euff-stroke-title');
-						}}
-						onMouseLeave={() => {
-							HideSubText('.euff-chars', '.euff-chars', '#euff-stroke-title');
-						}}
-					>
-						<div className="container-of-subtitle">
-							<h6 id="euff-left-subtitle">Festival Showcase</h6>
+				<AniLink cover to="/euff" direction="right" duration={2} bg="#d64b41">
+					<div style={{ width: '100%' }}>
+						<div
+							className="featured-project-block"
+							onMouseEnter={() => {
+								ShowSubText('.euff-chars', '.euff-chars', '#euff-stroke-title');
+							}}
+							onMouseLeave={() => {
+								HideSubText('.euff-chars', '.euff-chars', '#euff-stroke-title');
+							}}
+							role="project-button-to-new-page"
+						>
+							<div className="container-of-subtitle">
+								<h6 id="euff-left-subtitle">Festival Showcase</h6>
+							</div>
+							<h3 id="euff-stroke-title">euff india</h3>
+							<div className="container-of-subtitle">
+								<h6 id="euff-right-subtitle">May - June 2019</h6>
+							</div>
 						</div>
-						<h3 id="euff-stroke-title">euff india</h3>
-						<div className="container-of-subtitle">
-							<h6 id="euff-right-subtitle">May - June 2019</h6>
-						</div>
+						<div className="horizontal-rule" />
 					</div>
-					<div className="horizontal-rule" />
-				</div>
+				</AniLink>
 				{/* </Link> */}
 			</div>
 		</section>

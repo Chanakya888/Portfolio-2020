@@ -1,5 +1,4 @@
 import React from 'react';
-import BackgroundLayout from '../layoutSections/BackgroundLayout';
 
 const SkillsSection = () => {
 	const sub1 = 'Blockchain';

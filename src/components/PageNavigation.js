@@ -1,18 +1,22 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'gatsby';
+import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { SplitText } from '../util-functions/SplitText';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 gsap.registerPlugin(ScrollTrigger);
 // component
 const PageNavigation = (props) => {
-	const [ goDownBy, setGoDownBy ] = useState(true);
 	//id names
 	const section1 = `${props.section1}`;
 	const section2 = `${props.section2}`;
 	const section3 = `${props.section3}`;
 	const section4 = `${props.section4}`;
-	const section5 = 'Next-Project';
+	let section5 = 'Next-Project';
+	let nextProjectTitle = 'Next-Project';
+	//next project exception for last project euff right now
+	if (props.nextProjectException === 'About') {
+		nextProjectTitle = 'About';
+	}
 
 	//text to be displayed
 	const section1Name = section1.split('1');
@@ -43,16 +47,18 @@ const PageNavigation = (props) => {
 		window.scrollBy(0, distance.y - 75);
 	};
 
-	const sectionEnter = (section) => {
+	const sectionEnter = (section, target) => {
 		if (section.current !== null) {
 			section.current.classList.add('circle-full-opacity');
 			section.current.nextSibling.firstChild.classList.add('text-full-opacity');
+			showTheText(target);
 		}
 	};
-	const sectionLeave = (section) => {
+	const sectionLeave = (section, target) => {
 		if (section.current !== null) {
 			section.current.classList.remove('circle-full-opacity');
 			section.current.nextSibling.firstChild.classList.remove('text-full-opacity');
+			hideTheText(target);
 		}
 	};
 
@@ -88,49 +94,58 @@ const PageNavigation = (props) => {
 			trigger: `#${section1}`,
 			start: 'top 60%',
 			end: 'bottom 60%',
-			onEnter: () => sectionEnter(section1Ref),
-			onLeave: () => sectionLeave(section1Ref),
-			onEnterBack: () => sectionEnter(section1Ref),
-			onLeaveBack: () => sectionLeave(section1Ref)
+			onEnter: () => sectionEnter(section1Ref, section1),
+			onLeave: () => sectionLeave(section1Ref, section1),
+			onEnterBack: () => sectionEnter(section1Ref, section1),
+			onLeaveBack: () => sectionLeave(section1Ref, section1)
 		});
 		ScrollTrigger.create({
 			trigger: `#${section2}`,
 			start: 'top 60%',
 			end: 'bottom 60%',
-			onEnter: () => sectionEnter(section2Ref),
-			onLeave: () => sectionLeave(section2Ref),
-			onEnterBack: () => sectionEnter(section2Ref),
-			onLeaveBack: () => sectionLeave(section2Ref)
+			onEnter: () => sectionEnter(section2Ref, section2),
+			onLeave: () => sectionLeave(section2Ref, section2),
+			onEnterBack: () => sectionEnter(section2Ref, section2),
+			onLeaveBack: () => sectionLeave(section2Ref, section2)
 		});
 		ScrollTrigger.create({
 			trigger: `#${section3}`,
 			start: 'top 60%',
 			end: 'bottom 60%',
-			onEnter: () => sectionEnter(section3Ref),
-			onLeave: () => sectionLeave(section3Ref),
-			onEnterBack: () => sectionEnter(section3Ref),
-			onLeaveBack: () => sectionLeave(section3Ref)
+			onEnter: () => sectionEnter(section3Ref, section3),
+			onLeave: () => sectionLeave(section3Ref, section3),
+			onEnterBack: () => sectionEnter(section3Ref, section3),
+			onLeaveBack: () => sectionLeave(section3Ref, section3)
 		});
 		ScrollTrigger.create({
 			trigger: `#${section4}`,
 			start: 'top 60%',
 			end: 'bottom 60%',
-			onEnter: () => sectionEnter(section4Ref),
-			onLeave: () => sectionLeave(section4Ref),
-			onEnterBack: () => sectionEnter(section4Ref),
-			onLeaveBack: () => sectionLeave(section4Ref)
+			onEnter: () => sectionEnter(section4Ref, section4),
+			onLeave: () => sectionLeave(section4Ref, section4),
+			onEnterBack: () => sectionEnter(section4Ref, section4),
+			onLeaveBack: () => sectionLeave(section4Ref, section4)
+		});
+		ScrollTrigger.create({
+			trigger: `#${props.creditsId}`,
+			start: 'top 60%',
+			end: 'bottom 60%',
+			onEnter: () => showTheText(section5),
+			onLeave: () => hideTheText(section5),
+			onEnterBack: () => showTheText(section5),
+			onLeaveBack: () => hideTheText(section5)
 		});
 	}, []);
 
 	//Hide circles
 	useEffect(() => {
 		console.log('sec4 out', section4);
-		if (section4 == 'none') {
+		if (section4 === 'none') {
 			console.log('sec4', section4);
 			document.getElementById('section4-wrapper').style.display = 'none';
 		}
 
-		if (props.nextProject == 'none') {
+		if (props.nextProject === 'none') {
 			document.getElementById('nextProject').style.display = 'none';
 		}
 	}, []);
@@ -146,6 +161,8 @@ const PageNavigation = (props) => {
 					}}
 					onMouseOver={() => showTheText(section1)}
 					onMouseOut={() => hideTheText(section1)}
+					onFocus={() => {}}
+					role="nav-button"
 				>
 					{/* <div className="circle-boundary"> */}
 					<div className="circle" ref={section1Ref} id={`${section1}-circle`} />
@@ -164,6 +181,8 @@ const PageNavigation = (props) => {
 					}}
 					onMouseOver={() => showTheText(section2)}
 					onMouseOut={() => hideTheText(section2)}
+					onFocus={() => {}}
+					role="nav-button"
 				>
 					{/* <div className="circle-boundary"> */}
 					<div className="circle" ref={section2Ref} id={`${section2}-circle`} />
@@ -183,6 +202,8 @@ const PageNavigation = (props) => {
 					}}
 					onMouseOver={() => showTheText(section3)}
 					onMouseOut={() => hideTheText(section3)}
+					onFocus={() => {}}
+					role="nav-button"
 				>
 					{/* <div className="circle-boundary"> */}
 					<div className="circle" ref={section3Ref} id={`${section3}-circle`} />
@@ -203,6 +224,8 @@ const PageNavigation = (props) => {
 					}}
 					onMouseOver={() => showTheText(section4)}
 					onMouseOut={() => hideTheText(section4)}
+					onFocus={() => {}}
+					role="nav-button"
 				>
 					{/* <div className="circle-boundary"> */}
 					{/* </div> */}
@@ -214,8 +237,9 @@ const PageNavigation = (props) => {
 					</div>
 				</div>
 				{/* Button five */}
-				<div className="circle-button-wrapper" ref={section5Ref} id="nextProject" onMouseOver={() => showTheText(section5)} onMouseOut={() => hideTheText(section5)}>
-					<Link to={`${props.nextProject}`}>
+				<div className={`circle-button-wrapper ${props.creditsId}`} ref={section5Ref} id="nextProject" onFocus={() => {}} role="nav-button" onMouseOver={() => showTheText(section5)} onMouseOut={() => hideTheText(section5)}>
+					{/* <Link to={`${props.nextProject}`}> */}
+					<AniLink cover to={`${props.nextProject}`} direction="right" duration={2} bg="#d64b41">
 						<div className="svg-container" id="Next-Project-circle">
 							<svg xmlns="http://www.w3.org/2000/svg" width="15.513" height="10.346" viewBox="0 0 15.513 10.346">
 								<path
@@ -229,10 +253,11 @@ const PageNavigation = (props) => {
 						</div>
 						<div className="text-background">
 							<p className="page-navigation-text" id="Next-Project-text">
-								Next Project
+								{`${nextProjectTitle}`}
 							</p>
 						</div>
-					</Link>
+					</AniLink>
+					{/* </Link> */}
 				</div>
 			</div>
 		</div>

@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 
 const Aboutindex = () => {
 	return (
-		<div className="main-container">
+		<div className="main-container main-container-add-top-padding main-container-add-bottom-padding">
 			<div>
 				<Header />
 				<div className="h1-and-menu-space">
@@ -21,11 +21,11 @@ const Aboutindex = () => {
 					</h1>
 				</div>
 				{/* Section one  */}
-				<MyStorySection />
-				{/* Section two */}
 				<SkillsSection />
-				{/* Section three */}
+				{/* Section two */}
 				<MyExperienceSection />
+				{/* Section three */}
+				<MyStorySection />
 				{/* Section four */}
 				<section id="Status1home">
 					<div className="section-gap">

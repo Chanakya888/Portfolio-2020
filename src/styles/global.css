@@ -295,6 +295,11 @@ li {
   margin-top: 20px;
 }
 
+.title-text-h1,
+.button-text-container {
+  overflow: hidden;
+}
+
 /* **For small ipads and tablets** */
 @media only screen and (min-width: 768px) {
   :root {

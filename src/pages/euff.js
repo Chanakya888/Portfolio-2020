@@ -13,7 +13,7 @@ const Euff = () => {
 			<canvas id="noise" className="noise" />
 			<div className="components-foreground">
 				<EuffIndex />
-				<PageNavigation section1="Background1Euff" section2="Solutions1Euff" section3="UI-Design1Euff" section4="Development1Euff" nextProject="/" />
+				<PageNavigation section1="Background1Euff" section2="Solutions1Euff" section3="UI-Design1Euff" section4="Development1Euff" nextProject="/about" nextProjectException="About" creditsId="euff-credits-container" />
 			</div>
 		</div>
 	);

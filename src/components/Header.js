@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { gsap, TimelineLite } from 'gsap';
-import { Link } from 'gatsby';
 // import { SplitText } from "../util-functions/SplitText"
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
@@ -8,7 +7,7 @@ function Header(props) {
 	useEffect(() => {
 		let headerAnimation = new TimelineLite();
 
-		headerAnimation.fromTo('.horizontal-rule', { width: '0%' }, { width: '100%', duration: 1, ease: 'Power4.easeIn' });
+		headerAnimation.fromTo('#nav-horizontal-rule', { width: '0%' }, { width: '100%', duration: 1, ease: 'Power4.easeIn' });
 	}, []);
 	const splitAnimation = (target) => {
 		gsap.to(target, {
@@ -27,7 +26,7 @@ function Header(props) {
 	return (
 		<div>
 			<div className="header-inner-items-horizontal-flex">
-				<AniLink cover to="/" direction="left" duration={2} bg="#d64b41">
+				<AniLink cover to="/" direction="right" duration={2} bg="#d64b41">
 					<button
 						onMouseOver={() => {
 							splitAnimation('#menu');
@@ -35,6 +34,7 @@ function Header(props) {
 						onMouseOut={() => {
 							resetAnimation('#menu');
 						}}
+						onFocus={() => {}}
 						className="button-hover"
 					>
 						<h4 id="menu">Portfolio</h4>
@@ -52,7 +52,7 @@ function Header(props) {
 					<h4 id="contact">Contact</h4>
 				</button>
 			</div>
-			<div className="horizontal-rule padding-between-headerline-and-menu-buttons" />
+			<div className="horizontal-rule padding-between-headerline-and-menu-buttons" id="nav-horizontal-rule" />
 		</div>
 	);
 }

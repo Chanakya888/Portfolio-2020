@@ -1,17 +1,37 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/home.css';
 import Header from '../components/Header';
 import FeaturedProjects from '../home-page-sections/FeaturedProjects';
 import HomeAboutMe from '../home-page-sections/HomeAboutMe';
 import Footer from '../components/Footer';
+import { setTitleText, animateLines } from '../util-functions/componentAnimations';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap } from 'gsap';
+gsap.registerPlugin(ScrollTrigger);
 function Home() {
+	useEffect(() => {
+		setTitleText('title-text');
+		animateLines('title-text');
+		setTitleText('end-title-text');
+	}, []);
+
+	useEffect(() => {
+		ScrollTrigger.create({
+			trigger: '#end-title-text',
+			start: 'top 80%',
+			onEnter: () => animateLines('end-title-text', 'no-delay'),
+			onLeave: () => {},
+			onEnterBack: () => {},
+			onLeaveBack: () => {}
+		});
+	}, []);
 	return (
 		<div className="main-container main-container-add-top-padding main-container-add-bottom-padding">
 			<div>
 				<Header />
 				<section id="Hey1home">
 					<div className="h1-and-menu-space">
-						<h1 style={{ marginTop: '5px' }} className="h1-width">
+						<h1 style={{ marginTop: '5px' }} className="h1-width" id="title-text">
 							hey I'm Chanakya. <span>I love</span> building things web and blockchain. Glad to see you here!
 						</h1>
 					</div>
@@ -24,7 +44,7 @@ function Home() {
 				</div>
 				<section id="Status1home">
 					<div className="section-gap">
-						<h1 style={{ marginTop: '5px' }} className="h1-width">
+						<h1 style={{ marginTop: '5px' }} className="h1-width" id="end-title-text">
 							I'm actively looking for a 6month internship starting january 2021
 						</h1>
 					</div>

@@ -11,7 +11,7 @@ const CSP = () => {
 			<canvas id="noise" className="noise" />
 			<div className="components-foreground">
 				<CspIndex />
-				<PageNavigation section1="Background1csp" section2="Solutions1csp" section3="UI-Design1csp" section4="Development1csp" nextProject="/euff/" />
+				<PageNavigation section1="Background1csp" section2="Solutions1csp" section3="UI-Design1csp" section4="Development1csp" nextProject="/euff/" creditsId="csp-credits-container" />
 			</div>
 		</div>
 	);

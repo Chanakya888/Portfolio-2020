@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ButtonComponent from '../components/ButtonComponent';
-import { Link } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap } from 'gsap';
+import { buttonAnimation } from '../util-functions/componentAnimations';
 const HomeAboutMe = () => {
+	useEffect(() => {
+		gsap.set('.button-text', { y: 40 });
+		gsap.set('#button-horizontal-rule', { width: '0%' });
+	}, []);
+	useEffect(() => {
+		ScrollTrigger.create({
+			trigger: '#About1home',
+			start: 'top 50%',
+			onEnter: () => buttonAnimation('no-delay')
+		});
+	}, []);
 	return (
 		<section id="About1home">
 			<h2>About me</h2>
@@ -15,9 +29,9 @@ const HomeAboutMe = () => {
 					experience choices in an emerging field like blockchain.
 				</p>
 				<div className="content-and-section-gap-2 ">
-					<Link to="/about">
+					<AniLink cover to="/about" direction="right" duration={2} bg="#d64b41">
 						<ButtonComponent buttonName="Know more" buttonId="know" />
-					</Link>
+					</AniLink>
 				</div>
 			</div>
 		</section>

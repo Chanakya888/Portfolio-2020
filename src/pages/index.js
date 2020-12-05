@@ -4,7 +4,6 @@ import '../styles/reset.css';
 import '../styles/global.css';
 import '../styles/App.css';
 import IndexSection from '../home-page-sections/IndexSection';
-import PageNavigation from '../components/PageNavigation';
 
 export default function Home() {
 	useEffect(() => {
