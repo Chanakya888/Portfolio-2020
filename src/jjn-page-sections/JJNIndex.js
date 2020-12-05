@@ -51,8 +51,8 @@ const JJNIndex = () => {
 							<span>Org.</span>
 						</h1>
 						<div className="content-and-section-gap-2 ">
-							<h4 style={{ opacity: 0.5 }}>Currently under Development</h4>
-							{/* <ButtonComponent buttonName="Currently under Development" /> */}
+							{/* <h4 style={{ opacity: 0.5 }}>Currently under Development</h4> */}
+							<ButtonComponent buttonName="Currently under Development" letterAnimation="no" />
 						</div>
 					</div>
 				</div>

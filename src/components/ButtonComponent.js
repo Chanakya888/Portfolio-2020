@@ -2,9 +2,19 @@ import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 
 const ButtonComponent = (props) => {
+	let letterSpacing = '2px';
+	if (props.letterAnimation === 'no') {
+		letterSpacing = '0px';
+	}
+	useEffect(() => {
+		if (props.letterAnimation === 'no') {
+			document.getElementById('button-horizontal-rule').style.display = 'none';
+			document.getElementById(`${props.buttonId}`).style.opacity = '0.5';
+		}
+	}, []);
 	const splitAnimation = (target) => {
 		gsap.to(target, {
-			letterSpacing: '2px',
+			letterSpacing: letterSpacing,
 			duration: 0.25,
 			ease: 'Power4.easeOut'
 		});
