@@ -54,7 +54,9 @@ const EuffIndex = (props) => {
 							<span>Film India</span>
 						</h1>
 						<div className="content-and-section-gap-2 ">
-							<ButtonComponent buttonName="Visit the website" />
+							<a href="https://euffindia.com/" target="_blank">
+								<ButtonComponent buttonName="Visit the website" />
+							</a>
 						</div>
 					</div>
 				</div>

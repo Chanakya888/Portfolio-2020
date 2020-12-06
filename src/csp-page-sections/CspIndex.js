@@ -54,7 +54,9 @@ const CspIndex = () => {
 						</h1>
 
 						<div className="content-and-section-gap-2">
-							<ButtonComponent buttonName="Visit the website" />
+							<a href="https://capital-square-partners-testing-v1.netlify.app/" target="_blank">
+								<ButtonComponent buttonName="Visit the website" />
+							</a>
 						</div>
 					</div>
 				</div>

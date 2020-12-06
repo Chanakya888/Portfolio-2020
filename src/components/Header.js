@@ -44,17 +44,19 @@ function Header(props) {
 						<h4 id="menu">Portfolio</h4>
 					</button>
 				</Link>
-				<button
-					onMouseOver={() => {
-						splitAnimation('#contact');
-					}}
-					onMouseOut={() => {
-						resetAnimation('#contact');
-					}}
-					className="button-hover"
-				>
-					<h4 id="contact">Contact</h4>
-				</button>
+				<a href="mailto: samuraichanakya1@gmail.com">
+					<button
+						onMouseOver={() => {
+							splitAnimation('#contact');
+						}}
+						onMouseOut={() => {
+							resetAnimation('#contact');
+						}}
+						className="button-hover"
+					>
+						<h4 id="contact">Contact</h4>
+					</button>
+				</a>
 			</div>
 			<div className="horizontal-rule padding-between-headerline-and-menu-buttons" id="nav-horizontal-rule" />
 		</div>
