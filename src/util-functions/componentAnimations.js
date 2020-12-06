@@ -17,7 +17,9 @@ const setTitleText = (target) => {
 
 const animateLines = (target, setDelay) => {
 	let delay = 1;
-	if (setDelay === 'no-delay') {
+	if (setDelay === 'opening-animation') {
+		delay = 3;
+	} else if (setDelay === 'no-delay') {
 		delay = 0;
 	}
 	let t1 = new TimelineLite();

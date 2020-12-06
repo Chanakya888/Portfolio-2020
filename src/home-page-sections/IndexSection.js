@@ -11,8 +11,8 @@ gsap.registerPlugin(ScrollTrigger);
 function Home() {
 	useEffect(() => {
 		setTitleText('title-text');
-		animateLines('title-text');
 		setTitleText('end-title-text');
+		animateLines('title-text', 'opening-animation');
 	}, []);
 
 	useEffect(() => {
@@ -28,7 +28,7 @@ function Home() {
 	return (
 		<div className="main-container main-container-add-top-padding main-container-add-bottom-padding">
 			<div>
-				<Header />
+				<Header delay="opening" />
 				<section id="Hey1home">
 					<div className="h1-and-menu-space">
 						<h1 style={{ marginTop: '5px' }} className="h1-width" id="title-text">
