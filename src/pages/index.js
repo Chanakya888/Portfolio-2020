@@ -18,7 +18,7 @@ export default function Home() {
 		document.getElementsByTagName('BODY')[0].style.overflow = 'hidden';
 		setTimeout(function() {
 			document.getElementsByTagName('BODY')[0].style.overflow = 'scroll';
-		}, 2500);
+		}, 4000);
 		t1.fromTo(document.getElementsByClassName('opening-rectangle'), { width: '0vw' }, { width: '100vw', ease: 'Power4.easeOut', duration: 1 });
 		t1.add(function() {
 			document.getElementsByClassName('opening-rectangle')[0].classList.add('change-opening-side');

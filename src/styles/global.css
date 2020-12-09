@@ -304,6 +304,12 @@ li {
 .change-opening-side {
 	right: 0;
 }
+.buttons-container {
+	margin-top: 30px;
+}
+.individual-button-container {
+	margin-top: 10px;
+}
 
 /* **For small ipads and tablets** */
 @media only screen and (min-width: 768px) {
@@ -411,6 +417,16 @@ li {
 	.grid-wrapper {
 		row-gap: 0px;
 		column-gap: 0px;
+	}
+	.buttons-container {
+		margin-top: 50px;
+		display: flex;
+	}
+	.individual-button-container {
+		margin-top: 0px;
+	}
+	.individual-button-2-container {
+		margin-left: 40px;
 	}
 }
 
@@ -626,4 +642,9 @@ li {
 		height: 812px;
 		width: 375px;
 	}
+	.kyc-image-cover{
+		height: 1000px;
+		object-position: 20px 20%;
+	}
+
 }

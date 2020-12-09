@@ -31,29 +31,30 @@ const FeaturedProjects = () => {
 		<section id="Projects1home">
 			<h2>Featured Projects</h2>
 			<div className="content-and-section-gap-2">
-				<div style={{ width: '100%' }}>
-					<div className="horizontal-rule" />
-					<div
-						className="featured-project-block"
-						onMouseEnter={() => {
-							ShowSubText('.tsundoku-chars', '.tsundoku-chars', '#tsundoku-stroke-title');
-						}}
-						onMouseLeave={() => {
-							HideSubText('.tsundoku-chars', '.tsundoku-chars', '#tsundoku-stroke-title');
-						}}
-						role="project-button-to-new-page"
-					>
-						<div className="container-of-subtitle">
-							<h6 id="tsundoku-left-subtitle">Blockchain</h6>
+				<AniLink cover to="/kyc" direction="right" duration={2} bg="#d64b41">
+					<div style={{ width: '100%' }}>
+						<div className="horizontal-rule" />
+						<div
+							className="featured-project-block"
+							onMouseEnter={() => {
+								ShowSubText('.tsundoku-chars', '.tsundoku-chars', '#tsundoku-stroke-title');
+							}}
+							onMouseLeave={() => {
+								HideSubText('.tsundoku-chars', '.tsundoku-chars', '#tsundoku-stroke-title');
+							}}
+							role="project-button-to-new-page"
+						>
+							<div className="container-of-subtitle">
+								<h6 id="tsundoku-left-subtitle">Blockchain</h6>
+							</div>
+							<h3 id="tsundoku-stroke-title">KYC</h3>
+							<div className="container-of-subtitle">
+								<h6 id="tsundoku-right-subtitle">Nov - Dec 2020</h6>
+							</div>
 						</div>
-						<h3 id="tsundoku-stroke-title">KYC</h3>
-						<div className="container-of-subtitle">
-							<h6 id="tsundoku-right-subtitle">Nov - Dec 2020</h6>
-						</div>
+						<div className="horizontal-rule" />
 					</div>
-					<div className="horizontal-rule" />
-				</div>
-				{/* <Link to="/csp"> */}
+				</AniLink>
 				<AniLink cover to="/csp" direction="right" duration={2} bg="#d64b41">
 					<div style={{ width: '100%' }}>
 						<div
@@ -77,8 +78,6 @@ const FeaturedProjects = () => {
 						<div className="horizontal-rule" />
 					</div>
 				</AniLink>
-				{/* </Link> */}
-				{/* <Link to="/jjn"> */}
 				<AniLink cover to="/jjn" direction="right" duration={2} bg="#d64b41">
 					<div style={{ width: '100%' }}>
 						<div
@@ -102,8 +101,6 @@ const FeaturedProjects = () => {
 						<div className="horizontal-rule" />
 					</div>
 				</AniLink>
-				{/* </Link> */}
-				{/* <Link to="/euff"> */}
 				<AniLink cover to="/euff" direction="right" duration={2} bg="#d64b41">
 					<div style={{ width: '100%' }}>
 						<div
@@ -127,7 +124,6 @@ const FeaturedProjects = () => {
 						<div className="horizontal-rule" />
 					</div>
 				</AniLink>
-				{/* </Link> */}
 			</div>
 		</section>
 	);

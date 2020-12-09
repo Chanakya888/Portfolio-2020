@@ -54,7 +54,7 @@ const CspIndex = () => {
 						</h1>
 
 						<div className="content-and-section-gap-2">
-							<a href="https://capital-square-partners-testing-v1.netlify.app/" target="_blank">
+							<a href="https://capital-square-partners-testing-v1.netlify.app/" target="_blank" rel="noopener noreferrer">
 								<ButtonComponent buttonName="Visit the website" />
 							</a>
 						</div>
@@ -63,7 +63,7 @@ const CspIndex = () => {
 			</div>
 			<div className="content-and-section-gap">
 				<div className="cover-image-container">
-					<Img fluid={query.euffImages.childImageSharp.fluid} alt="euff-cover" className="cover-image" />
+					<Img fluid={query.euffImages.childImageSharp.fluid} alt="csp-cover" className="cover-image" />
 				</div>
 			</div>
 			<div className="main-container  main-container-add-bottom-padding">

@@ -7,6 +7,9 @@ import Footer from '../components/Footer';
 import { setTitleText, animateLines } from '../util-functions/componentAnimations';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { gsap } from 'gsap';
+import ButtonComponent from '../components/ButtonComponent';
+import { graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
 const Aboutindex = () => {
 	useEffect(() => {
 		setTitleText('about-title-text');
@@ -24,36 +27,70 @@ const Aboutindex = () => {
 			onLeaveBack: () => {}
 		});
 	}, []);
+	const query = useStaticQuery(graphql`
+		query {
+			image: file(relativePath: { eq: "about-1-cover.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 2000) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+		}
+	`);
 	return (
-		<div className="main-container main-container-add-top-padding main-container-add-bottom-padding">
-			<div>
-				<Header />
-				<div className="h1-and-menu-space">
-					<h1 style={{ marginTop: '5px' }} id="about-title-text">
-						<span>intro</span>
-						<span>of</span>
-						<span>yourself</span>
-						<span>square</span>
-						<span>partners</span>
-						<span>singapore</span>
-					</h1>
+		<div>
+			<div className="main-container main-container-add-top-padding">
+				<div style={{ width: '100%' }}>
+					<Header />
+					<div className="h1-and-menu-space">
+						<h1 style={{ marginTop: '5px' }} id="about-title-text">
+							<span>intro</span>
+							<span>of</span>
+							<span>yourself</span>
+							<span>square</span>
+							<span>partners</span>
+							<span>singapore</span>
+						</h1>
+						<div className="buttons-container">
+						<a href="https://github.com/Chanakya888" target="_blank" rel="noopener noreferrer">
+							<div className="individual-button-container">
+								<ButtonComponent buttonId="github" buttonName="Github" />
+							</div>
+						</a>
+							<a href="https://www.linkedin.com/in/kilaru-chanakya/" target="_blank" rel="noopener noreferrer">
+								<div className="individual-button-container individual-button-2-container">
+									<ButtonComponent buttonId="linkedin" buttonName="LinkedIn" />
+								</div>
+							</a>
+						</div>
+					</div>
 				</div>
-				{/* Section one  */}
-				<SkillsSection />
-				{/* Section two */}
-				<MyExperienceSection />
-				{/* Section three */}
-				<MyStorySection />
-				{/* Section four */}
-				<section id="Status1home">
+			</div>
+			<div className="content-and-section-gap">
+				<div className="cover-image-container">
+					<Img fluid={query.image.childImageSharp.fluid} alt="about-cover" className="cover-image" />
+				</div>
+			</div>
+			<div className="main-container  main-container-add-bottom-padding">
+				<div>
+					{/* Section one  */}
+					<SkillsSection />
+					{/* Section two */}
+					<MyExperienceSection />
+					{/* Section three */}
+					<MyStorySection />
+					{/* Section four */}
+
 					<div className="section-gap">
 						<h1 style={{ marginTop: '5px' }} className="h1-width" id="about-end-title-text">
 							I'm actively looking for a 6month internship starting january 2021
 						</h1>
 					</div>
-				</section>
-				<div className="content-and-section-gap-2">
-					<Footer />
+
+					<div className="content-and-section-gap-2">
+						<Footer />
+					</div>
 				</div>
 			</div>
 		</div>
