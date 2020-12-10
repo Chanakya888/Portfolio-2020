@@ -8,7 +8,7 @@ const SkillsSection = () => {
 	const title = 'My Skills';
 	return (
 		<section>
-			<div className="section-gap">
+			<div className="section-below-cover">
 				<h2>{title}</h2>
 
 				<div className="content-and-section-gap-2">

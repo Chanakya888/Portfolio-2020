@@ -310,6 +310,9 @@ li {
 .individual-button-container {
 	margin-top: 10px;
 }
+.section-below-cover{
+	margin-top: 60px;
+}
 
 /* **For small ipads and tablets** */
 @media only screen and (min-width: 768px) {
@@ -645,6 +648,9 @@ li {
 	.kyc-image-cover{
 		height: 1000px;
 		object-position: 20px 20%;
+	}
+	.section-below-cover{
+		margin-top: 100px;
 	}
 
 }

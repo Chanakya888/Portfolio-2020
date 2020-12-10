@@ -4,7 +4,7 @@ import MyStorySection from './MyStorySection';
 import MyExperienceSection from './MyExperienceSection';
 import SkillsSection from './SkillsSection';
 import Footer from '../components/Footer';
-import { setTitleText, animateLines } from '../util-functions/componentAnimations';
+import { setTitleText, animateLines, buttonAnimation } from '../util-functions/componentAnimations';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { gsap } from 'gsap';
 import ButtonComponent from '../components/ButtonComponent';
@@ -15,6 +15,7 @@ const Aboutindex = () => {
 		setTitleText('about-title-text');
 		setTitleText('about-end-title-text');
 		animateLines('about-title-text');
+		buttonAnimation()
 	}, []);
 
 	useEffect(() => {
@@ -45,22 +46,22 @@ const Aboutindex = () => {
 					<Header />
 					<div className="h1-and-menu-space">
 						<h1 style={{ marginTop: '5px' }} id="about-title-text">
-							<span>intro</span>
-							<span>of</span>
-							<span>yourself</span>
-							<span>square</span>
-							<span>partners</span>
-							<span>singapore</span>
+							<span>A tech</span> <span>head who</span><span>believes in</span> <span>blockchain.</span> <span>open for</span> <span>interesting</span> projects.
 						</h1>
 						<div className="buttons-container">
-						<a href="https://github.com/Chanakya888" target="_blank" rel="noopener noreferrer">
-							<div className="individual-button-container">
-								<ButtonComponent buttonId="github" buttonName="Github" />
-							</div>
-						</a>
+							<a href="https://github.com/Chanakya888" target="_blank" rel="noopener noreferrer">
+								<div className="individual-button-container">
+									<ButtonComponent buttonId="github" buttonName="Github" />
+								</div>
+							</a>
 							<a href="https://www.linkedin.com/in/kilaru-chanakya/" target="_blank" rel="noopener noreferrer">
 								<div className="individual-button-container individual-button-2-container">
 									<ButtonComponent buttonId="linkedin" buttonName="LinkedIn" />
+								</div>
+							</a>
+							<a href="../assets/Resume-2020.pdf" download >
+								<div className="individual-button-container individual-button-2-container">
+									<ButtonComponent buttonId="resume" buttonName="Download Resume" />
 								</div>
 							</a>
 						</div>
