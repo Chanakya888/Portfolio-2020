@@ -59,9 +59,9 @@ const Aboutindex = () => {
 									<ButtonComponent buttonId="linkedin" buttonName="LinkedIn" />
 								</div>
 							</a>
-							<a href="../assets/Resume-2020.pdf" download >
+							<a href="https://drive.google.com/file/d/1xHuna_LmV3zPipA1VNQhk_CENAxKJBzq/view?usp=sharing" target="_blank" rel="noopener noreferrer">
 								<div className="individual-button-container individual-button-2-container">
-									<ButtonComponent buttonId="resume" buttonName="Download Resume" />
+									<ButtonComponent buttonId="resume" buttonName="View Resume" />
 								</div>
 							</a>
 						</div>
