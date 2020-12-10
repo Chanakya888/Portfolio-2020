@@ -44,7 +44,7 @@ function Header(props) {
 						<h4 id="menu">Portfolio</h4>
 					</button>
 				</Link>
-				<a href="mailto: samuraichanakya1@gmail.com">
+				<a href="mailto:heychanakya@gmail.com">
 					<button
 						onMouseOver={() => {
 							splitAnimation('#contact');
