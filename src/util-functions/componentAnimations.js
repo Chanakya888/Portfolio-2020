@@ -3,7 +3,6 @@ import { SplitText } from './SplitText';
 import { TimelineLite, gsap } from 'gsap';
 
 const setTitleText = (target) => {
-	console.log('target is ', target);
 	let split = new SplitText(`#${target}`, { type: 'lines', linesClass: 'title-text-h1' });
 	split.lines.forEach((element) => {
 		const line_innerDiv = document.createElement('h1');

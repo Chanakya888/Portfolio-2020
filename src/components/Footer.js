@@ -29,6 +29,8 @@ const Footer = () => {
 							resetAnimation('#contact');
 						}}
 						className="button-hover"
+						onBlur={()=>{}}
+						onFocus={()=>{}}
 					>
 						<h4 id="contact">Contact</h4>
 					</button>

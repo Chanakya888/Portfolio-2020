@@ -1,5 +1,4 @@
 export default function renderNoise() {
-	console.log('rendering noise');
 	const noise = () => {
 		let canvas, ctx;
 

@@ -38,6 +38,7 @@ const ButtonComponent = (props) => {
 			}}
 			onFocus={() => {}}
 			role="button"
+			onBlur={()=>{}}
 		>
 			<div className="button-text-container">
 				<h4 className="button-text" id={`${props.buttonId}`}>

@@ -5,6 +5,11 @@
  */
 
 module.exports = {
+	siteMetadata: {
+		title: `Chanakya Kilaru's Portfolio`,
+		description: `Portfolio`,
+		author: `Chanakya Kilaru`,
+	  },
 	/* Your site config here */
 	plugins: [
 		{

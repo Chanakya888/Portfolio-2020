@@ -6,7 +6,6 @@ import SkillsSection from './SkillsSection';
 import Footer from '../components/Footer';
 import { setTitleText, animateLines, buttonAnimation } from '../util-functions/componentAnimations';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { gsap } from 'gsap';
 import ButtonComponent from '../components/ButtonComponent';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
