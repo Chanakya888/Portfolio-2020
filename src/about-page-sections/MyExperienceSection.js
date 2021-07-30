@@ -30,6 +30,12 @@ const MyExperienceSection = () => {
 							<li>Co-organiser of TEDxBMU 2019</li>
 						</ul>
 					</div>
+					<div className="context-point">
+						<h5>2021</h5>
+						<ul>
+							<li>Internship at Interlay Ltd. (May - July)</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>

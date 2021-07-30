@@ -1,10 +1,6 @@
 import React, { useEffect } from "react"
 import Header from "../components/Header"
 import ButtonComponent from "../components/ButtonComponent"
-import CspBackgroundSection from "./CspBackgroundSection"
-import CspSolutionsection from "./CspSolutionsection"
-import CspUiSection from "./CspUiSection"
-import CspDevelopmentSection from "./CspDevelopmentSection"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import Footer from "../components/Footer"
@@ -14,29 +10,32 @@ import {
   animateLines,
   buttonAnimation,
 } from "../util-functions/componentAnimations"
-const CspIndex = () => {
+import InterlayWhatILearntSection from "./InterlayWhatILearnedOnSection"
+import InterlayWhatIWorkedOnSection from "./InterlayWhatIWorkedOnSection"
+import InterlayBackgroundSection from "./InterlayBackgroundSection"
+const InterlayIndex = () => {
   useEffect(() => {
-    setTitleText("csp-title-text")
-    animateLines("csp-title-text")
+    setTitleText("interlay-title-text")
+    animateLines("interlay-title-text")
     buttonAnimation()
-    setTitleText("csp-end-title-text")
+    setTitleText("interlay-end-title-text")
   }, [])
-  const query = useStaticQuery(graphql`
-    query {
-      euffImages: file(relativePath: { eq: "csp-cover.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 2000) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+  //   const query = useStaticQuery(graphql`
+  //     query {
+  //       euffImages: file(relativePath: { eq: "interlay-cover.png" }) {
+  //         childImageSharp {
+  //           fluid(maxWidth: 2000) {
+  //             ...GatsbyImageSharpFluid
+  //           }
+  //         }
+  //       }
+  //     }
+  //   `)
   useEffect(() => {
     ScrollTrigger.create({
-      trigger: "#csp-end-title-text",
+      trigger: "#interlay-end-title-text",
       start: "top 80%",
-      onEnter: () => animateLines("csp-end-title-text", "no-delay"),
+      onEnter: () => animateLines("interlay-end-title-text", "no-delay"),
       onLeave: () => {},
       onEnterBack: () => {},
       onLeaveBack: () => {},
@@ -48,18 +47,17 @@ const CspIndex = () => {
         <div style={{ width: "100%" }}>
           <Header />
           <div className="h1-and-menu-space">
-            <h1 style={{ marginTop: "5px" }} id="csp-title-text">
-              <span>case</span>
-              <span>study of</span>
-              <span>Capital</span>
-              <span>square</span>
-              <span>partners</span>
-              <span>singapore</span>
+            <h1 style={{ marginTop: "5px" }} id="interlay-title-text">
+              <span>My</span>
+              <span>experience</span>
+              <span>working for</span>
+              <span>Interlay</span>
+              <span>on interBTC</span>
             </h1>
 
             <div className="content-and-section-gap-2">
               <a
-                href="https://capital-square-partners-testing-v1.netlify.app/"
+                href="https://beta.polkabtc.io/?tab=issue"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -71,31 +69,29 @@ const CspIndex = () => {
       </div>
       <div className="content-and-section-gap">
         <div className="cover-image-container">
-          <Img
+          {/* <Img
             fluid={query.euffImages.childImageSharp.fluid}
-            alt="csp-cover"
+            alt="interlay-cover"
             className="cover-image"
-          />
+          /> */}
         </div>
       </div>
       <div className="main-container  main-container-add-bottom-padding">
         <div>
           {/* Section one */}
-          <CspBackgroundSection />
+          <InterlayBackgroundSection />
           {/* Section two */}
-          <CspSolutionsection />
+          <InterlayWhatIWorkedOnSection />
           {/* Section three */}
-          <CspUiSection />
-          {/* Section four */}
-          <CspDevelopmentSection />
+          <InterlayWhatILearntSection />
           <div className="section-gap">
-            <div id="csp-credits-container">
+            <div id="interlay-credits-container">
               <h1
                 style={{ marginTop: "5px" }}
                 className="h1-width "
-                id="csp-end-title-text"
+                id="interlay-end-title-text"
               >
-                thanks to wishbox studio for their trust and thanks to you for
+                thanks to interlay for their trust and thanks to you for
                 reading!
               </h1>
             </div>
@@ -109,4 +105,4 @@ const CspIndex = () => {
   )
 }
 
-export default CspIndex
+export default InterlayIndex

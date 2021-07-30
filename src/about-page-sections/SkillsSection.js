@@ -18,16 +18,15 @@ const SkillsSection = () => {
 							<ul>
 								<li>Solidity</li>
 								<li>Truffle</li>
-								<li>Remix</li>
-								<li>Hyperledger</li>
+								<li>Web3.js</li>
 							</ul>
 						</div>
 						<div className="context-point role">
 							<h5>{sub2}</h5>
 							<ul>
+								<li>TypeScript</li>
 								<li>Gatsby JS</li>
 								<li>React JS</li>
-								<li>Node JS</li>
 								<li>Graph QL</li>
 							</ul>
 						</div>
@@ -36,7 +35,7 @@ const SkillsSection = () => {
 							<ul>
 								<li>Final Cut ProX</li>
 								<li>Adobe After Effects</li>
-								<li>Adobe Photoshop</li>
+								<li>Figma</li>
 								<li>Adobe XD</li>
 							</ul>
 						</div>
@@ -46,7 +45,6 @@ const SkillsSection = () => {
 								<li>UX Research</li>
 								<li>Wireframing</li>
 								<li>Prototyping</li>
-								<li>UI Design</li>
 							</ul>
 						</div>
 					</div>

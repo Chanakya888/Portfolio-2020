@@ -32,20 +32,21 @@ function Home() {
 				<section id="Hey1home">
 					<div className="h1-and-menu-space">
 						<h1 style={{ marginTop: '5px' }} className="h1-width" id="title-text">
-							hey I'm Chanakya. <span>I love</span> building things web and blockchain. Glad to see you here!
+							hey I'm Chanakya. <span>I am a</span>frontend developer with focus on UI/UX design.
 						</h1>
 					</div>
 				</section>
 				<div className="section-gap">
-					<FeaturedProjects />
-				</div>
-				<div className="section-gap">
 					<HomeAboutMe />
 				</div>
+				<div className="section-gap">
+					<FeaturedProjects />
+				</div>
+				
 				<section id="Status1home">
 					<div className="section-gap">
 						<h1 style={{ marginTop: '5px' }} className="h1-width" id="end-title-text">
-							I'm actively looking for a 6month internship starting january 2021
+							I'm actively looking for positions in frontend engineering starting august 2021.
 						</h1>
 					</div>
 				</section>
