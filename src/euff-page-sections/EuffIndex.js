@@ -68,7 +68,6 @@ const EuffIndex = props => {
         <div className="cover-image-container">
           <Img
             fluid={query.euffImages.childImageSharp.fluid}
-            alt="euff-cover"
             className="cover-image"
           />
         </div>

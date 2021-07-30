@@ -11,6 +11,7 @@ const ButtonComponent = props => {
       document.getElementById("button-horizontal-rule").style.display = "none"
       document.getElementById(`${props.buttonId}`).style.opacity = "0.5"
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   const splitAnimation = target => {
     gsap.to(target, {

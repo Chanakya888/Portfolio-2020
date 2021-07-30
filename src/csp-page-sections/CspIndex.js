@@ -23,7 +23,7 @@ const CspIndex = () => {
   }, [])
   const query = useStaticQuery(graphql`
     query {
-      euffImages: file(relativePath: { eq: "csp-cover.png" }) {
+      cspImage: file(relativePath: { eq: "csp-cover.png" }) {
         childImageSharp {
           fluid(maxWidth: 2000) {
             ...GatsbyImageSharpFluid
@@ -66,7 +66,7 @@ const CspIndex = () => {
       <div className="content-and-section-gap">
         <div className="cover-image-container">
           <Img
-            fluid={query.euffImages.childImageSharp.fluid}
+            fluid={query.cspImage.childImageSharp.fluid}
             alt="csp-cover"
             className="cover-image"
           />

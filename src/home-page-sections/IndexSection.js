@@ -35,8 +35,7 @@ function Home() {
         <section id="Hey1home">
           <div className="h1-and-menu-space">
             <h1 style={{ marginTop: "5px" }} id="title-text">
-              hey I'm Chanakya. <span>a frontend</span>developer with focus on
-              UI/UX design.
+              hey I'm Chanakya. a frontend developer with focus on UI/UX design.
             </h1>
           </div>
         </section>

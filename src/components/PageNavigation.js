@@ -40,6 +40,7 @@ const PageNavigation = props => {
         section5Ref.current.style.display = "none"
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const moveToThisSection = section => {
@@ -120,6 +121,7 @@ const PageNavigation = props => {
       ],
       { y: goDownBy }
     )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   //scroll triggers, run after all the components are loaded
@@ -169,6 +171,7 @@ const PageNavigation = props => {
       onEnterBack: () => showTheText(section5),
       onLeaveBack: () => hideTheText(section5),
     })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   //Hide circles
@@ -181,6 +184,7 @@ const PageNavigation = props => {
     if (props.nextProject === "none") {
       document.getElementById("nextProject").style.display = "none"
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

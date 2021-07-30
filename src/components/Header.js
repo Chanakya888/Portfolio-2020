@@ -15,6 +15,7 @@ function Header(props) {
       { width: "0%" },
       { delay: delay, width: "100%", duration: 1, ease: "Power4.easeIn" }
     )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   const splitAnimation = target => {
     gsap.to(target, {
