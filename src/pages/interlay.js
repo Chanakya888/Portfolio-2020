@@ -15,6 +15,7 @@ const Interlay = () => {
           section1="Background1Interlay"
           section2="Work1Interlay"
           section3="Learnings1Interlay"
+          section4="none"
           nextProject="/kyc"
           creditsId="Interlay-credits-container"
         />

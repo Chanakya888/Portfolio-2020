@@ -173,7 +173,6 @@ const PageNavigation = props => {
 
   //Hide circles
   useEffect(() => {
-    console.log("sec4 out", section4)
     if (section4 === "none") {
       console.log("sec4", section4)
       document.getElementById("section4-wrapper").style.display = "none"
@@ -248,32 +247,27 @@ const PageNavigation = props => {
           </div>
         </button>
         {/* Button four */}
-        {section4 === undefined && (
-          <button
-            className="circle-button-wrapper"
-            id="section4-wrapper"
-            onClick={() => {
-              moveToThisSection(section4)
-            }}
-            onMouseOver={() => showTheText(section4)}
-            onMouseOut={() => hideTheText(section4)}
-            onFocus={() => {}}
-            onBlur={() => {}}
-          >
-            {/* <div className="circle-boundary"> */}
-            {/* </div> */}
-            <div
-              className="circle"
-              ref={section4Ref}
-              id={`${section4}-circle`}
-            />
-            <div className="text-background">
-              <p className="page-navigation-text" id={`${section4}-text`}>
-                {section4Name[0]}
-              </p>
-            </div>
-          </button>
-        )}
+
+        <button
+          className="circle-button-wrapper"
+          id="section4-wrapper"
+          onClick={() => {
+            moveToThisSection(section4)
+          }}
+          onMouseOver={() => showTheText(section4)}
+          onMouseOut={() => hideTheText(section4)}
+          onFocus={() => {}}
+          onBlur={() => {}}
+        >
+          {/* <div className="circle-boundary"> */}
+          {/* </div> */}
+          <div className="circle" ref={section4Ref} id={`${section4}-circle`} />
+          <div className="text-background">
+            <p className="page-navigation-text" id={`${section4}-text`}>
+              {section4Name[0]}
+            </p>
+          </div>
+        </button>
 
         {/* Button five */}
         <button

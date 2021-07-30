@@ -20,17 +20,17 @@ const InterlayIndex = () => {
     buttonAnimation()
     setTitleText("interlay-end-title-text")
   }, [])
-  //   const query = useStaticQuery(graphql`
-  //     query {
-  //       euffImages: file(relativePath: { eq: "interlay-cover.png" }) {
-  //         childImageSharp {
-  //           fluid(maxWidth: 2000) {
-  //             ...GatsbyImageSharpFluid
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `)
+    const query = useStaticQuery(graphql`
+      query {
+        interlayImage: file(relativePath: { eq: "interlay-cover.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 2000) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    `)
   useEffect(() => {
     ScrollTrigger.create({
       trigger: "#interlay-end-title-text",
@@ -69,11 +69,11 @@ const InterlayIndex = () => {
       </div>
       <div className="content-and-section-gap">
         <div className="cover-image-container">
-          {/* <Img
-            fluid={query.euffImages.childImageSharp.fluid}
+          <Img
+            fluid={query.interlayImage.childImageSharp.fluid}
             alt="interlay-cover"
             className="cover-image"
-          /> */}
+          />
         </div>
       </div>
       <div className="main-container  main-container-add-bottom-padding">
