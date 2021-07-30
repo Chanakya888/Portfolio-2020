@@ -48,12 +48,7 @@ const CspIndex = () => {
           <Header />
           <div className="h1-and-menu-space">
             <h1 style={{ marginTop: "5px" }} id="kyc-title-text">
-              <span>case</span>
-              <span>study of</span>
-              <span>Know</span>
-              <span>Your</span>
-              <span>Customer</span>
-              <span>Blockchain</span>
+              case study of Know your customer on blockchain
             </h1>
 
             <div className="content-and-section-gap-2">

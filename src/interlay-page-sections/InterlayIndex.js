@@ -20,17 +20,17 @@ const InterlayIndex = () => {
     buttonAnimation()
     setTitleText("interlay-end-title-text")
   }, [])
-    const query = useStaticQuery(graphql`
-      query {
-        interlayImage: file(relativePath: { eq: "interlay-cover.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 2000) {
-              ...GatsbyImageSharpFluid
-            }
+  const query = useStaticQuery(graphql`
+    query {
+      interlayImage: file(relativePath: { eq: "interlay-cover.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 2000) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
-    `)
+    }
+  `)
   useEffect(() => {
     ScrollTrigger.create({
       trigger: "#interlay-end-title-text",
@@ -48,11 +48,7 @@ const InterlayIndex = () => {
           <Header />
           <div className="h1-and-menu-space">
             <h1 style={{ marginTop: "5px" }} id="interlay-title-text">
-              <span>My</span>
-              <span>experience</span>
-              <span>working for</span>
-              <span>Interlay</span>
-              <span>on interBTC</span>
+              my experience working for interlay on interbtc
             </h1>
 
             <div className="content-and-section-gap-2">

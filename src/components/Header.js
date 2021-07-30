@@ -15,7 +15,7 @@ function Header(props) {
       { width: "0%" },
       { delay: delay, width: "100%", duration: 1, ease: "Power4.easeIn" }
     )
-  })
+  }, [])
   const splitAnimation = target => {
     gsap.to(target, {
       letterSpacing: "2px",

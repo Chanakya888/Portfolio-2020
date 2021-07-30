@@ -49,14 +49,8 @@ const CspIndex = () => {
           <Header />
           <div className="h1-and-menu-space">
             <h1 style={{ marginTop: "5px" }} id="csp-title-text">
-              <span>case</span>
-              <span>study of</span>
-              <span>Capital</span>
-              <span>square</span>
-              <span>partners</span>
-              <span>singapore</span>
+              Case study of capital square partners singapore
             </h1>
-
             <div className="content-and-section-gap-2">
               <a
                 href="https://capital-square-partners-testing-v1.netlify.app/"

@@ -40,7 +40,7 @@ const PageNavigation = props => {
         section5Ref.current.style.display = "none"
       }
     }
-  }, [props.nextProject])
+  }, [])
 
   const moveToThisSection = section => {
     let distance = document.getElementById(section).getBoundingClientRect()
@@ -120,7 +120,7 @@ const PageNavigation = props => {
       ],
       { y: goDownBy }
     )
-  }, [section1, section2, section3, section4, section5])
+  }, [])
 
   //scroll triggers, run after all the components are loaded
   useEffect(() => {
@@ -169,7 +169,7 @@ const PageNavigation = props => {
       onEnterBack: () => showTheText(section5),
       onLeaveBack: () => hideTheText(section5),
     })
-  })
+  }, [])
 
   //Hide circles
   useEffect(() => {
@@ -181,7 +181,7 @@ const PageNavigation = props => {
     if (props.nextProject === "none") {
       document.getElementById("nextProject").style.display = "none"
     }
-  })
+  }, [])
 
   return (
     <div id="pageNavigation" className="page-navigation">

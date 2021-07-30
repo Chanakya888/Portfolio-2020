@@ -11,7 +11,7 @@ const ButtonComponent = props => {
       document.getElementById("button-horizontal-rule").style.display = "none"
       document.getElementById(`${props.buttonId}`).style.opacity = "0.5"
     }
-  })
+  }, [])
   const splitAnimation = target => {
     gsap.to(target, {
       letterSpacing: letterSpacing,

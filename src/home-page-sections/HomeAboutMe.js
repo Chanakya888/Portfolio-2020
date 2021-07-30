@@ -22,15 +22,15 @@ const HomeAboutMe = () => {
       <div className="content-and-section-gap">
         <p>
           I have been building on the web professionally for the past two years.
-          I love working on the frontend with focus on user experience. I
-          interned as a frontend developer and a UI/UX designer for Wishbox
-          studio, a design agency for a combined time of one year(2019&2020)
-          where I worked with several clients like EU embassy of India, Just
-          Jobs Network and Capital Square Partners. During my senior year of
-          university(2021), I interned at Interlay as a frontend developer and
-          UX Designer for 7months where I contributed to the design and
+          I love working on the frontend with focus on user experience. For the
+          past 7months(Jan -July 2021), I interned at Interlay as a frontend
+          developer and UI/UX Designer where I contributed to the design and
           development of interBTC, a decentralised solution to bring Bitcoin
-          onto smart contract supported platforms.
+          onto smart contract supported platforms. Previously, I interned as a
+          frontend developer and a UI/UX designer for Wishbox studio, a design
+          agency based in India for a combined time of one year(2019&2020) where
+          I worked with several clients like EU embassy of India, Just Jobs
+          Network and Capital Square Partners.
         </p>
         <p className="p-padding-top">
           I am a computer science graduate(2017-2021) with elective coursework
