@@ -111,6 +111,7 @@ const Aboutindex = () => {
                 href="https://www.womp.xyz/"
                 style={{ textDecoration: "underline", display: "inline" }}
                 target="_blank"
+                rel="noreferrer"
               >
                 WOMP.XYZ
               </a>
