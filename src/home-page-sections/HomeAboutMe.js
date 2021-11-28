@@ -21,16 +21,24 @@ const HomeAboutMe = () => {
       <h2>About me</h2>
       <div className="content-and-section-gap">
         <p>
-          I have been building on the web professionally for the past two years.
-          I love working on the frontend with focus on user experience. For the
-          past 7months(Jan -July 2021), I interned at Interlay as a frontend
-          developer and UI/UX Designer where I contributed to the design and
-          development of interBTC, a decentralised solution to bring Bitcoin
-          onto smart contract supported platforms. Previously, I interned as a
-          frontend developer and a UI/UX designer for Wishbox studio, a design
-          agency based in India for a combined time of one year(2019&2020) where
-          I worked with several clients like EU embassy of India, Just Jobs
-          Network and Capital Square Partners.
+          I have been building on the web professionally for the past three
+          years. I love working on the frontend with focus on user experience. I
+          have been working as a frontend engineer for the past 3months at{" "}
+          <a
+            href="https://www.womp.xyz/"
+            style={{ textDecoration: "underline", display: "inline" }}
+            target="_blank"
+          >
+            womp.xyz
+          </a>{" "}
+          to make 3D accessible. During Jan -July 2021, I interned at Interlay
+          as a frontend developer and UI/UX Designer where I contributed to the
+          design and development of interBTC, a decentralised solution to bring
+          Bitcoin onto smart contract supported platforms. Previously, I
+          interned as a frontend developer and a UI/UX designer for Wishbox
+          studio, a design agency based in India for a combined time of one
+          year(2019&2020) where I worked with several clients like EU embassy of
+          India, Just Jobs Network and Capital Square Partners.
         </p>
         <p className="p-padding-top">
           I am a computer science graduate(2017-2021) with elective coursework

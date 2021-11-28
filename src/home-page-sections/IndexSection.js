@@ -49,8 +49,14 @@ function Home() {
         <section id="Status1home">
           <div className="section-gap">
             <h1 style={{ marginTop: "5px" }} id="end-title-text">
-              I'm actively looking for positions in frontend engineering
-              starting <span>august 2021.</span>
+              I'm currently working as a frontend engineer at{" "}
+              <a
+                href="https://www.womp.xyz/"
+                style={{ textDecoration: "underline", display: "inline" }}
+                target="_blank"
+              >
+                WOMP.XYZ
+              </a>
             </h1>
           </div>
         </section>
