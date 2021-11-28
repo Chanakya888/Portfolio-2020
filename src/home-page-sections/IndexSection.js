@@ -48,7 +48,7 @@ function Home() {
 
         <section id="Status1home">
           <div className="section-gap">
-            <h1 style={{ marginTop: "5px" }} id="end-title-text">
+            <h1 style={{ marginTop: "5px" }}>
               I'm currently working as a frontend engineer at{" "}
               <a
                 href="https://www.womp.xyz/"

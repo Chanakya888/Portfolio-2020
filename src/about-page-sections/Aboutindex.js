@@ -116,7 +116,6 @@ const Aboutindex = () => {
               </a>
             </h1>
           </div>
-
           <div className="content-and-section-gap-2">
             <Footer />
           </div>
